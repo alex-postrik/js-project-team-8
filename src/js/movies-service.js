@@ -21,77 +21,15 @@ class MoviesServise {
   // Метод для запиту популярних фільмыів
   async fetchPopularMovies() {
     const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`;
-
-    try {
-      const response = await axios.get(url);
-      const data = await response.data;
-      const moviesSort = await data.results;
-
-      const genres = await this.fetchGenres();
-      const getGenres = localStorage.getItem(LOCKALSTORAGE_KEY);
-
-      if (getGenres) {
-        const parsedGetGenres = JSON.parse(getGenres);
-
-        const movies = moviesSort.map(movie => {
-          const { poster_path, title, genre_ids, release_date, id } = movie;
-          this.movieId = id;
-
-          const movieGenres = genre_ids.map(genreId => {
-            const matchedGenre = parsedGetGenres.find(
-              genre => genre.id === genreId
-            );
-            return matchedGenre.name;
-          });
-
-          return {
-            posterPath: `https://image.tmdb.org/t/p/w500${poster_path}`,
-            title,
-            genreIds:
-              movieGenres.length <= 3
-                ? movieGenres.join(', ')
-                : movieGenres.slice(0, 2).join(', ') + ', Other',
-            releaseDate: release_date.slice(0, 4),
-            id,
-          };
-        });
-        this.allPages = data.total_pages;
-
-        return movies;
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    const movies = await this.fetchMovie(url);
+    return movies;
   }
 
   // Метод для пошуку по ключовому слову
   async fetchSearchMovies() {
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${this.searchQuery}&page=${this.page}`;
-
-    try {
-      const response = await axios.get(url);
-      const data = await response.data;
-      const moviesSort = await data.results;
-
-      const movies = await moviesSort.map(movie => {
-        const { poster_path, title, genre_ids, release_date, id } = movie;
-        this.movieId = id;
-
-        return {
-          posterPath: `https://image.tmdb.org/t/p/w500${poster_path}`,
-          title,
-          genre_ids,
-          genresAll,
-          releaseDate: release_date.slice(0, 4),
-          id,
-        };
-      });
-      this.allPages = data.total_pages;
-
-      return movies;
-    } catch (error) {
-      console.error(error);
-    }
+    const movies = await this.fetchMovie(url);
+    return movies;
   }
 
   // Метод для запиту информації про фільм для модалки
@@ -157,8 +95,56 @@ class MoviesServise {
     this.page += 1;
   }
 
+  // Метод для віднімання сторінки для пагінації
+  subtractPage() {
+    this.page -= 1;
+  }
+
   resetPage() {
     this.page = 1;
+  }
+
+  async fetchMovie(url) {
+    try {
+      const response = await axios.get(url);
+      const data = await response.data;
+      const moviesSort = await data.results;
+
+      const genres = await this.fetchGenres();
+      const getGenres = localStorage.getItem(LOCKALSTORAGE_KEY);
+
+      if (getGenres) {
+        const parsedGetGenres = JSON.parse(getGenres);
+
+        const movies = moviesSort.map(movie => {
+          const { poster_path, title, genre_ids, release_date, id } = movie;
+          this.movieId = id;
+
+          const movieGenres = genre_ids.map(genreId => {
+            const matchedGenre = parsedGetGenres.find(
+              genre => genre.id === genreId
+            );
+            return matchedGenre.name;
+          });
+
+          return {
+            posterPath: `https://image.tmdb.org/t/p/w500${poster_path}`,
+            title,
+            genreIds:
+              movieGenres.length <= 3
+                ? movieGenres.join(', ')
+                : movieGenres.slice(0, 2).join(', ') + ', Other',
+            releaseDate: release_date.slice(0, 4),
+            id,
+          };
+        });
+        this.allPages = data.total_pages;
+
+        return movies;
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async fetchGenres() {
@@ -168,8 +154,6 @@ class MoviesServise {
     const genres = await data.genres;
 
     localStorage.setItem(LOCKALSTORAGE_KEY, JSON.stringify(genres));
-
-    return genres;
   }
 }
 
