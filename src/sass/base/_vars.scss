@@ -1,25 +1,29 @@
 :root {
-    // колір тексту карток/модалок/input
-    --primary-text-color: #000000;
-    --secondary-text-color: #B92F2C;
+  // колір тексту карток/модалок/input
+  --primary-text-color: #000000;
+  --secondary-text-color: #b92f2c;
+  --bgr-btn-color: #245cb1c4;
 
-    // колір тексту хедера акцентних елементів
-    --akcent-text-color: #FFFFFF;
+  // колір тексту хедера акцентних елементів
+  --akcent-text-color: #ffffff;
 
-    // колір тексту в футері
-    --footer-text-color: #545454;
+  // колір тексту в футері
+  --footer-text-color: #545454;
 
-    //  бегроунди 
-    --primary-bg-color: #F0F0F0;
-    --footer-bg-color: #F7F7F7 ;
+  //  бегроунди
+  --primary-bg-color: #f0f0f0;
+  --footer-bg-color: #f7f7f7;
 
-    // градієнт фона хедер
-    --background-header-radient: linear-gradient(273.67deg, rgba(0, 0, 0, 0.49) -2.09%, rgba(0, 0, 0, 0) 99.83%);
+  // градієнт фона хедер
+  --background-header-radient: linear-gradient(
+    273.67deg,
+    rgba(0, 0, 0, 0.49) -2.09%,
+    rgba(0, 0, 0, 0) 99.83%
+  );
 
-    // колір оверлею під модалки
-    --overlay-bg-color: rgba(0, 0, 0, 0.2);  
-   
-    // шрифти
-    --font-family: 'Roboto', sans-serif;
-   
+  // колір оверлею під модалки
+  --overlay-bg-color: rgba(0, 0, 0, 0.2);
+
+  // шрифти
+  --font-family: 'Roboto', sans-serif;
 }

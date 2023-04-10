@@ -5,14 +5,27 @@
 @import './base/reset';
 @import './base/vars';
 
+ modal-aboutMovie
 
+=======
+ main
 // 
 
+@import './spinner';
 
 
+
+@import './pagination';
 
 // @import '~node_modules/modern-normalize/modern-normalize.css';
+// components
+@import './components/header-main';
 
+@import './components/header-lib';
+
+@import './components/cards';
+
+ modal-aboutMovie
 
 
 
@@ -30,3 +43,6 @@
 
 
 @import './components/modal-aboutMovie';
+=======
+//
+ main
