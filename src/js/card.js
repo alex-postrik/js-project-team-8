@@ -16,7 +16,6 @@ async function renderMovieCard(movies) {
     console.log(error);
   }
 }
-
 function createMovieCardMarkup(movies) {
   const movieCardMarkup = movies
     .map(({ posterPath, title, genreIds, releaseDate, id }) => {
