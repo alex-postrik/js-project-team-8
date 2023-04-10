@@ -18,9 +18,17 @@
 <path d="M1 15L15 1" stroke="black" stroke-width="2"/>
 </svg>
 <!-- search -->
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg id="icon-search" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781 2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M14 14.0001L11.1 11.1001" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<!-- films -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <symbol id="icon-film" viewBox="0 0 32 32">
+      <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M26.427 2.667H5.574a2.907 2.907 0 0 0-2.907 2.907v20.853a2.907 2.907 0 0 0 2.907 2.907h20.853a2.907 2.907 0 0 0 2.907-2.907V5.574a2.907 2.907 0 0 0-2.907-2.907zM9.334 2.667v26.667M22.666 2.667v26.667M2.667 16h26.667M2.667 9.333h6.667M2.667 22.667h6.667M22.666 22.667h6.667M22.666 9.333h6.667" style="stroke:var(--color1, #fff)"/>
+    </symbol>
+  </defs>
 </svg>
 <!-- heart -->
 <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">

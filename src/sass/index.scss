@@ -4,10 +4,17 @@
 @import './base/container';
 @import './base/reset';
 @import './base/vars';
+
 // 
 
 @import './spinner';
 
 
-// @import '~node_modules/modern-normalize/modern-normalize.css';
 
+@import './pagination';
+
+// @import '~node_modules/modern-normalize/modern-normalize.css';
+// components
+@import './components/header-main';
+@import './components/cards';
+//
