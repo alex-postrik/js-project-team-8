@@ -3,10 +3,10 @@ const KEY_CODE_ESC = "Escape";
 const refs = {
     backdrop: document.querySelector('.backdrop'),
     closeBtn: document.querySelector('[data-close-modal="btn-modal-close-about-movie"]'),
-    openBtn: document.querySelector('[data-open-modal="open-modal"]')
+    openModal: document.querySelector('[data-open-modal="open-modal"]')
 };
 
-refs.openBtn.addEventListener('click', onOpenModalAboutMovies);
+refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 
 function onOpenModalAboutMovies() {
     window.addEventListener('keydown', onCloseKeyEscPress);
