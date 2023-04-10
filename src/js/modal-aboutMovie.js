@@ -3,7 +3,7 @@ const KEY_CODE_ESC = "Escape";
 const refs = {
     backdrop: document.querySelector('.backdrop'),
     closeBtn: document.querySelector('[data-close-modal="btn-modal-close-about-movie"]'),
-    openModal: document.querySelector('[data-open-modal="open-modal"]')
+    openModal: document.querySelector('.movies__item')
 };
 
 refs.openModal.addEventListener('click', onOpenModalAboutMovies);
