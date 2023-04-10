@@ -9,6 +9,7 @@ const refs = {
 refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 
 function onOpenModalAboutMovies() {
+    
     window.addEventListener('keydown', onCloseKeyEscPress);
     refs.closeBtn.addEventListener('click', onCloseModalAboutMovies);
     refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);

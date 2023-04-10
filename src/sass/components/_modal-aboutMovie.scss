@@ -34,7 +34,7 @@ body.show-modal-about-movie .modal-about-movie {
     min-height: 930px;
     height: auto;
     left: 50%;
-    top: 20px;
+    top: 20%;
     transform: translateX(-50%);
     background-color: var(--akcent-text-color);
     padding: 48px 20px 40px;
@@ -42,16 +42,19 @@ body.show-modal-about-movie .modal-about-movie {
     @media (min-width: 768px) {
         display: flex;
         gap: 68px;
-            width: 596px;
-            height: 448px;
-            min-height: 448px;
-            padding: 40px 36px 64px 36px;
+        width: 704px;
+        height: auto;
+        min-height: 552px;
+        min-height: 448px;
+        padding: 40px 36px 64px 36px;
     }
 
-    // @media (min-width: 1200px) {
-    //     width: 806px;
-    //     height: 558px;
-    // }
+    @media (min-width: 1200px) {
+        gap: 16px;
+        width: 806px;
+        height: 558px;
+        padding: 40px 12px 40px 12px;
+    }
 }
 
 
@@ -68,18 +71,26 @@ body.show-modal-about-movie .modal-about-movie {
     margin: 0;
     padding: 0;
     width: 240px;
-    min-height: 300px;
+    min-height: 375px;
     border-radius: 5px;
+
+    @media (min-width: 768px) {
+            width: 264px;
+            height: 373.55px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 375px;
+        height: 478px;
+    }
 }
 
 .about-movie{
     margin-top: 20px;
-    margin-bottom: 20px;
-    width: 264px;
 
     @media (min-width: 768px) {
+        margin-top: 0;
             // display: inline-block;
-            margin-top: 0;
             margin-bottom: 0;
     }
     
@@ -98,7 +109,8 @@ body.show-modal-about-movie .modal-about-movie {
 
 .characteristics-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 40px;
     margin-top: 20px;
     padding: 0;
     
@@ -169,4 +181,70 @@ body.show-modal-about-movie .modal-about-movie {
     line-height: 20px;
     /* or 167% */
     color: #000000;
+}
+
+
+.btn-container{
+    margin-top: 20px;
+    display: flex;
+    gap: 4px;
+    @media (min-width: 768px) {
+        gap: 10px;
+    }
+}
+
+.btn-add-watched {
+    padding: 10px 12px;
+    
+    width: 125px;
+        height: 34px;
+        border: none;
+        background: #B92F2C;
+        box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+        border-radius: 100px;
+
+        text-transform: uppercase;
+        font-family: 'Roboto';
+            font-style: normal;
+            font-size: 12px;
+            line-height: 14px;
+            color: #FFFFFF;
+
+        @media (min-width: 768px) {
+            width: 137px;
+            height: 38px;
+        }
+    
+        @media (min-width: 1200px) {
+            width: 165px;
+            height: 42px;
+        }
+}
+
+.btn-add-queue {
+    padding: 9px 13px;
+    min-width: 111px;
+    margin: 0;
+        height: 34px;
+        background: #FFFFFF;
+        border: 1px solid #000000;
+        border-radius: 100px;
+
+        font-family: 'Roboto';
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            color: #B92F2C;
+
+        @media (min-width: 768px) {
+            width: 119px;
+            height: 38px;
+        }
+    
+        @media (min-width: 1200px) {
+            width: 134px;
+            height: 42px;
+        }
 }
