@@ -60,6 +60,10 @@ body.show-modal-about-movie .modal-about-movie {
 
 .btn-modal-close-about-movie {
     position: absolute;
+    line-height: 0;
+    padding: 0;
+    border: 0;
+    background-color:#FFFFFF;
     top: 8px;
     right: 8px;
     width: 30px;
@@ -104,7 +108,7 @@ body.show-modal-about-movie .modal-about-movie {
     font-size: 20px;
     line-height: 23px;
 
-    color: #000000;
+    color: var(--primary-text-color);
 }
 
 .characteristics-container{
@@ -121,7 +125,7 @@ body.show-modal-about-movie .modal-about-movie {
 }
 
 .characteristic-text {
-    font-family: 'Roboto';
+    font-family: var(--font-family);
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -135,52 +139,39 @@ body.show-modal-about-movie .modal-about-movie {
 }
 
 .characteristics-value-text{
-    font-family: 'Roboto';
+    font-family: var(--font-family);
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
         line-height: 1.3;
     
-        color: #000000;
+        color: var(--primary-text-color);
 }
 
-
-
-
-
-
-
-
-// 
-//
-
-
-// 
-// 
 .about-text{
     margin-top: 20px;
     padding: 0;
 
-    font-family: 'Roboto';
+    font-family: var(--font-family);
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 1.3;
    
     text-transform: uppercase;
 
-    color: #000000;
+    color: var(--primary-text-color);
 }
 
 .about-movie-text{
     margin-top: 8px;
-    font-family: 'Roboto';
+    font-family: var(--font-family);
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
-    line-height: 20px;
+    line-height: 1.6;
     /* or 167% */
-    color: #000000;
+    color: var(--primary-text-color);
 }
 
 
@@ -197,18 +188,18 @@ body.show-modal-about-movie .modal-about-movie {
     padding: 10px 12px;
     
     width: 125px;
-        height: 34px;
-        border: none;
-        background: #B92F2C;
-        box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
-        border-radius: 100px;
+    height: 34px;
+    border: none;
+    background: var(--secondary-text-color);
+    box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+    border-radius: 100px;
 
-        text-transform: uppercase;
-        font-family: 'Roboto';
-            font-style: normal;
-            font-size: 12px;
-            line-height: 14px;
-            color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.3;
+    color: #FFFFFF;
 
         @media (min-width: 768px) {
             width: 137px;
@@ -225,18 +216,18 @@ body.show-modal-about-movie .modal-about-movie {
     padding: 9px 13px;
     min-width: 111px;
     margin: 0;
-        height: 34px;
-        background: #FFFFFF;
-        border: 1px solid #000000;
-        border-radius: 100px;
+    height: 34px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 100px;
 
-        font-family: 'Roboto';
-            text-transform: uppercase;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 14px;
-            color: #B92F2C;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--secondary-text-color);
 
         @media (min-width: 768px) {
             width: 119px;
@@ -247,4 +238,30 @@ body.show-modal-about-movie .modal-about-movie {
             width: 134px;
             height: 42px;
         }
+}
+
+.rating-movie{
+    width: 36px;
+    height: 16px;
+    padding: 1px 10px;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    background: var(--secondary-text-color);
+    border-radius: 5px;
+}
+
+.icon-close{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    width: 30px;
+    height: 30px;
 }
