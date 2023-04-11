@@ -19,18 +19,18 @@ refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 function onOpenModalAboutMovies(e) {
     e.preventDefault();
     
-    window.addEventListener('keydown', onCloseKeyEscPress);
-    // refs.closeBtn.addEventListener('click', onCloseModalAboutMovies);
-    refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-    document.body.classList.add("show-modal-about-movie");
-    // console.log(e.target.nodeName)
-    const child = e.target;
-    const parent = child.closest('.movies__item');
-    // console.log(parent.dataset.movies);
-    const currentMovieId = parent.dataset.movies;
-    // console.log(currentMovieId)
-    renderMovie(currentMovieId);
     
+    if (e.target.closest('.movies__item')) {
+        window.addEventListener('keydown', onCloseKeyEscPress);
+        refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+        document.body.classList.add("show-modal-about-movie");
+
+        const child = e.target;
+        const parent = child.closest('.movies__item'); 
+        const currentMovieId = parent.dataset.movies;
+    
+        renderMovie(currentMovieId);
+    }
 }
 
 
@@ -59,13 +59,12 @@ function onOpenModalAboutMovies(e) {
 async function renderMovie(currentMovieId) {
   try {
     const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
-      console.log(movie);
       const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
             <svg class="icon-close">
                 <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close" class="iconSVG-close"></use>
             </svg>
         </button>
- <img src="${movie.backdropPath}"
+ <img src="${movie.posterPath}"
             alt="images-movie" class="images-movie-modal">
 <div class="about-movie">
 <h1 class="name-movie">${movie.title}</h1>
