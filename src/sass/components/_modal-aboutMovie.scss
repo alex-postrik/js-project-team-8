@@ -31,7 +31,7 @@ body.show-modal-about-movie .modal-about-movie {
 .modal-about-movie {
     position: absolute;
     width: 280px;
-    min-height: 930px;
+    min-height: auto;
     height: auto;
     left: 50%;
     top: 20%;
@@ -45,14 +45,13 @@ body.show-modal-about-movie .modal-about-movie {
         width: 704px;
         height: auto;
         min-height: 552px;
-        min-height: 448px;
         padding: 40px 36px 64px 36px;
     }
 
     @media (min-width: 1200px) {
         gap: 16px;
         width: 806px;
-        height: 558px;
+        min-height: 558px;
         padding: 40px 12px 40px 12px;
     }
 }
@@ -62,7 +61,7 @@ body.show-modal-about-movie .modal-about-movie {
     position: absolute;
     line-height: 0;
     padding: 0;
-    border: 0;
+    border: none;
     background-color:#FFFFFF;
     top: 8px;
     right: 8px;
@@ -135,6 +134,7 @@ body.show-modal-about-movie .modal-about-movie {
 
 .characteristics-element:not(:first-child){
     margin-top: 8px;
+    min-width: 69px;
 }
 
 .characteristic-text {
@@ -149,9 +149,11 @@ body.show-modal-about-movie .modal-about-movie {
 
 .characteristics-value-element:not(:first-child) {
     margin-top: 8px;
+    text-overflow: ellipsis;
 }
 
 .characteristics-value-text{
+    text-overflow: ellipsis;
     font-family: var(--font-family);
         font-style: normal;
         font-weight: 500;
@@ -272,8 +274,8 @@ body.show-modal-about-movie .modal-about-movie {
 
 .icon-close{
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 30px;
+    height: 30px;
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
