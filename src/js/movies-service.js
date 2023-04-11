@@ -33,8 +33,9 @@ class MoviesServise {
   }
 
   // Метод для запиту информації про фільм для модалки
-  async fetchFullInfoMovie() {
-    const url = `${BASE_URL}/movie/${this.movieId}?api_key=${API_KEY}`;
+  async fetchFullInfoMovie(id) {
+    this.movieId = id;
+    const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}`;
 
     try {
       const response = await axios.get(url);
@@ -54,7 +55,7 @@ class MoviesServise {
       const movie = {
         backdropPath: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
         title,
-        genres: genres.map(genre => genre.name).join(),
+        genres: genres.map(genre => genre.name).join(', '),
         id,
         popularity: popularity.toFixed(1),
         voteAverage: vote_average.toFixed(1),
