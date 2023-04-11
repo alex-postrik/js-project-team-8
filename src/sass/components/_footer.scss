@@ -1,0 +1,43 @@
+.footer {
+  background-color: var(--footer-bg-color);
+  text-align: center;
+  padding: 30px 0;
+  margin-top: auto;
+
+  &__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: var(--footer-text-color);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__icon {
+    margin: 12px 10px 0;
+    display: inline-block;
+
+  }
+
+  &__btn {
+    color: var(--footer-text-color);
+    border: none;
+    text-decoration: underline;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color ease-out 0.3s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--primary-text-color);
+      text-decoration: none;
+    }
+    #heart {
+      width: 18px;
+      height: 19px;
+    }
+  }
+}
