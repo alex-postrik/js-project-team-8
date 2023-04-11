@@ -34,6 +34,7 @@ class MoviesServise {
 
   // Метод для запиту информації про фільм для модалки
   async fetchFullInfoMovie(id) {
+    this.movieId = id;
     const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}`;
 
     try {

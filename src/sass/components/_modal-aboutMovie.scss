@@ -77,6 +77,7 @@ body.show-modal-about-movie .modal-about-movie {
     width: 240px;
     min-height: 375px;
     border-radius: 5px;
+    object-fit: cover;
 
     @media (min-width: 768px) {
             width: 264px;
