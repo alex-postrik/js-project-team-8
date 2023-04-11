@@ -33,8 +33,8 @@ class MoviesServise {
   }
 
   // Метод для запиту информації про фільм для модалки
-  async fetchFullInfoMovie() {
-    const url = `${BASE_URL}/movie/${this.movieId}?api_key=${API_KEY}`;
+  async fetchFullInfoMovie(id) {
+    const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}`;
 
     try {
       const response = await axios.get(url);
