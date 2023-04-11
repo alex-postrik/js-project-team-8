@@ -1,20 +1,16 @@
 setTimeout(() => {
     const KEY_CODE_ESC = "Escape";
 
-const refs = {
-    modalContainer: document.querySelector(".modal-about-movie"),
-    backdrop: document.querySelector('.backdrop'),
-    closeBtn: document.querySelector('[data-close-modal="btn-modal-close-about-movie"]'),
-<<<<<< local-storage-q
-    openModal: document.querySelector('.movies__container')
-=======
-    openModal: document.querySelector('.movies__list')
->>>>>> main
-};
+    const refs = {
+        modalContainer: document.querySelector(".modal-about-movie"),
+        backdrop: document.querySelector('.backdrop'),
+        closeBtn: document.querySelector('[data-close-modal="btn-modal-close-about-movie"]'),
 
+        openModal: document.querySelector('.movies__container', '.movies__list')
+    // openModal: document.querySelector('.movies__list')
+    };
 
-<<<<<< local-storage-q
-function onOpenModalAboutMovies(e) {
+  function onOpenModalAboutMovies(e) {
         if (e.target.nodeName !== 'IMG') {
             return;
         }
@@ -29,7 +25,7 @@ function onOpenModalAboutMovies(e) {
     {
     
 }
-    // renderMovie();
+ 
 }
 function renderMovie(movie) {
     const createMovieMarkup = ` <button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
@@ -91,7 +87,6 @@ function onCloseModalAboutMovies() {
     refs.backdrop.removeEventListener('click', onCloseModalAboutMoviesClickBackdrop);
     window.removeEventListener('keydown', onCloseKeyEscPress);
 }
-=======
 // console.log(refs.openModal);
 
 if (refs.openModal) {
@@ -122,7 +117,7 @@ if (refs.openModal) {
             onCloseModalAboutMovies();
         }
     }
->>>>>> main
+
 
     function onCloseKeyEscPress(e) {
         if (e.code === KEY_CODE_ESC) {
