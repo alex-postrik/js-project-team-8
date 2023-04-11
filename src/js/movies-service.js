@@ -43,6 +43,7 @@ class MoviesServise {
 
       const {
         backdrop_path,
+        poster_path,
         title,
         genres,
         id,
@@ -54,8 +55,9 @@ class MoviesServise {
       } = data;
       const movie = {
         backdropPath: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
+        posterPath: `https://image.tmdb.org/t/p/w500${poster_path}`,
         title,
-        genres: genres.map(genre => genre.name).join(),
+        genres: genres.map(genre => genre.name).join(', '),
         id,
         popularity: popularity.toFixed(1),
         voteAverage: vote_average.toFixed(1),

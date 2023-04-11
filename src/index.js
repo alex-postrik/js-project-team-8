@@ -16,7 +16,6 @@ import * as myModuleCard from './js/card';
 
 import './js/addToWatched';
 import './js/pagination';
-// main
 
 import './js/addToWatched';
 import './js/pagination';
@@ -25,5 +24,4 @@ import './js/scroll.js';
 
 
 import './js/modal-aboutMovie';
-
 

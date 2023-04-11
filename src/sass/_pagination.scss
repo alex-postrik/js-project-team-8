@@ -1,19 +1,19 @@
 .wrapper__pagination {
     margin-bottom: 60px;
     
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
+        align-items: center;
 }
 
 .pagination {
     display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     color: var(--primary-text-color);
+   
 }
 
 .pagination__button {
@@ -53,7 +53,8 @@
 
 .pagination__points {
     display: none;
-
+    padding-left: 16px;
+    padding-right: 16px;
     @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
