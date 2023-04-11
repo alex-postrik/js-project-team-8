@@ -68,6 +68,7 @@ body.show-modal-about-movie .modal-about-movie {
     right: 8px;
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 .images-movie-modal {
@@ -110,6 +111,17 @@ body.show-modal-about-movie .modal-about-movie {
     line-height: 23px;
 
     color: var(--primary-text-color);
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    
 }
 
 .characteristics-container{
@@ -194,6 +206,7 @@ body.show-modal-about-movie .modal-about-movie {
     background: var(--secondary-text-color);
     box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
     border-radius: 100px;
+    cursor: pointer;
 
     text-transform: uppercase;
     font-family: var(--font-family);
@@ -221,6 +234,7 @@ body.show-modal-about-movie .modal-about-movie {
     background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 100px;
+    cursor: pointer;
 
     font-family: var(--font-family);
     text-transform: uppercase;
@@ -263,6 +277,5 @@ body.show-modal-about-movie .modal-about-movie {
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
-    width: 30px;
-    height: 30px;
+    
 }
