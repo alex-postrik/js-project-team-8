@@ -1,4 +1,4 @@
-local - storage - q;
+// local - storage - q;
 //  modal-students
 
 //  modal-aboutMovie
@@ -18,7 +18,7 @@ import './js/modal.info';
 
 import * as myModuleCard from './js/card';
 
-local - storage - q;
+// local - storage - q;
 // origin/features/buttonAddtoWatched
 import './js/addToWatched';
 import './js/pagination';
