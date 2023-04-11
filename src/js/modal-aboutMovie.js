@@ -2,12 +2,14 @@ setTimeout(() => {
     const KEY_CODE_ESC = "Escape";
 
     const refs = {
-        modalContainer: document.querySelector(".modal-about-movie"),
-        backdrop: document.querySelector('.backdrop'),
-        closeBtn: document.querySelector('[data-close-modal="btn-modal-close-about-movie"]'),
+      modalContainer: document.querySelector('.modal-about-movie'),
+      backdrop: document.querySelector('.backdrop'),
+      closeBtn: document.querySelector(
+        '[data-close-modal="btn-modal-close-about-movie"]'
+      ),
 
-        openModal: document.querySelector('.movies__container', '.movies__list')
-    // openModal: document.querySelector('.movies__list')
+      openModal: document.querySelector('.movies__container'),
+      openModal: document.querySelector('.movies__list'),
     };
 
   function onOpenModalAboutMovies(e) {
