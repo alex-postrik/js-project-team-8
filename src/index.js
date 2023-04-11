@@ -28,4 +28,4 @@ import './js/addToWatched';
 import './js/pagination';
 
 import './js/modal-aboutMovie';
-main;
+// main;
