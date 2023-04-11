@@ -64,7 +64,7 @@ async function renderMovie(currentMovieId) {
                 <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close" class="iconSVG-close"></use>
             </svg>
         </button>
- <img src="${movie.backdropPath}"
+ <img src="${movie.posterPath}"
             alt="images-movie" class="images-movie-modal">
 <div class="about-movie">
 <h1 class="name-movie">${movie.title}</h1>
