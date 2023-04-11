@@ -6,7 +6,7 @@
 //  main
 import './js/modal-aboutMovie';
 
-main;
+
 import { watchedBtn, queueBtn } from './js/add-watsh-que.js';
 
 import './js/spinner';
