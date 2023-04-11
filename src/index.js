@@ -19,7 +19,6 @@ import './js/pagination';
 
 import './js/addToWatched';
 import './js/pagination';
-origin/searchKeyWord
 import './js/scroll.js';
 
 
