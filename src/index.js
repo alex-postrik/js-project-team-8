@@ -1,9 +1,9 @@
- modal-students
+//  modal-students
 
 //  modal-aboutMovie
 
- main
-//import './js/modal-aboutMovie';
+//  main
+import './js/modal-aboutMovie';
 
 import { watchedBtn, queueBtn } from './js/add-watsh-que.js';
 
@@ -15,7 +15,7 @@ import './js/card';
 import './js/modal.info';
 
 import * as myModuleCard from './js/card';
-origin/features/buttonAddtoWatched
+// origin/features/buttonAddtoWatched
 import './js/addToWatched';
 import './js/pagination';
-main
+// main
