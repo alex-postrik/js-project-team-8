@@ -2,21 +2,6 @@
 //  modal-aboutMovie
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //import './js/modal-aboutMovie';
 
 

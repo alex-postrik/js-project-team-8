@@ -96,6 +96,7 @@
 //       });
 //     }
 
+
 import axios from 'axios';
 
 const API_KEY = 'de2f3a0c57a311cc48a85909660d7281';
@@ -150,14 +151,14 @@ searchForm.addEventListener('submit', async e => {
   moviesService.searchQuery = searchQuery;
   const movies = await moviesService.fetchSearchMovies();
 
-  renderMovies(movies);
+  renderMoviesKeyWord(movies);
 });
 
-function renderMovies(movies) {
-  createMovieCardMarkup(movies);
+function renderMoviesKeyWord(movies) {
+  createMovieCardKeyMarkup(movies);
 }
 
-function createMovieCardMarkup(movies) {
+function createMovieCardKeyMarkup(movies) {
   const moviesContainer = document.querySelector('.movies__list');
   const movieCardMarkup = movies
     .map(({ posterPath, title, genre_ids, releaseDate, id }) => {
@@ -178,3 +179,5 @@ function createMovieCardMarkup(movies) {
     .join('');
   moviesContainer.innerHTML = movieCardMarkup;
 }
+
+
