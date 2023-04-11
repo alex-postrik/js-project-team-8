@@ -19,6 +19,7 @@ import './js/pagination';
 
 import './js/addToWatched';
 import './js/pagination';
+
 import './js/scroll.js';
 
 
