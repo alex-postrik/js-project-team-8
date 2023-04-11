@@ -18,6 +18,7 @@ searchForm.addEventListener('submit', async (event) => {
         Notiflix.Notify.failure('Sorry, this movie is not found');
       } else {
         createMovieCardMarkup(movies);
+        moviesService.resetPage()
         renderPagination(moviesService.page, moviesService.allPages, FOR_SEARCH);
       }
     } catch (error) {
