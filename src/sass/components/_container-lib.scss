@@ -1,0 +1,17 @@
+.lib__list  {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+  
+    @media screen and (min-width: 1280px) {
+      column-gap: 16px;
+      row-gap: 32px;
+    }
+  }
