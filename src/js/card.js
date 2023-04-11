@@ -1,5 +1,5 @@
 import moviesService from './movies-service';
-import { renderPagination, FOR_POPULAR } from './pagination'
+import { renderPagination, FOR_POPULAR } from './pagination';
 
 const refs = {
   moviesDivEl: document.querySelector('.movies__container'),
@@ -13,7 +13,7 @@ async function renderMovieCard(movies) {
     const movies = await moviesService.fetchPopularMovies();
     console.log(movies);
     createMovieCardMarkup(movies);
-    renderPagination(moviesService.page, moviesService.allPages, FOR_POPULAR)
+    renderPagination(moviesService.page, moviesService.allPages, FOR_POPULAR);
   } catch (error) {
     console.log(error);
   }
@@ -26,10 +26,8 @@ export function createMovieCardMarkup(movies) {
                 <div class="movies__thumb">
                     <img class="movies__img" src="${posterPath}" alt="${title}"/>
                 </div>
-                <div class="movies__desc">
                     <p class="movies__title">${title}</p>
                     <p class="movies__info">${genreIds} | ${releaseDate}</p>
-                </div>
             </li>
           `;
     })

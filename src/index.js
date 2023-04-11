@@ -1,27 +1,13 @@
+// local - storage - q;
+//  modal-students
 
 //  modal-aboutMovie
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//import './js/modal-aboutMovie';
+//  main
+import './js/modal-aboutMovie';
 
 
 import { watchedBtn, queueBtn } from './js/add-watsh-que.js';
-
 
 import './js/spinner';
 
@@ -31,5 +17,19 @@ import './js/card';
 import './js/modal.info';
 
 import * as myModuleCard from './js/card';
-import './js/pagination';
 
+// local - storage - q;
+// origin/features/buttonAddtoWatched
+import './js/addToWatched';
+import './js/pagination';
+// main
+
+import './js/addToWatched';
+import './js/pagination';
+origin/searchKeyWord
+import './js/scroll.js';
+
+
+import './js/modal-aboutMovie';
+// main;
+main

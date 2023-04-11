@@ -33,8 +33,8 @@ class MoviesServise {
   }
 
   // Метод для запиту информації про фільм для модалки
-  async fetchFullInfoMovie() {
-    const url = `${BASE_URL}/movie/${this.movieId}?api_key=${API_KEY}`;
+  async fetchFullInfoMovie(id) {
+    const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}`;
 
     try {
       const response = await axios.get(url);
@@ -52,12 +52,12 @@ class MoviesServise {
         original_title,
       } = data;
       const movie = {
-        backdrop_path: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
+        backdropPath: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
         title,
         genres: genres.map(genre => genre.name).join(),
         id,
-        popularity,
-        vote_average,
+        popularity: popularity.toFixed(1),
+        voteAverage: vote_average.toFixed(1),
         vote_count,
         overview,
         original_title,
@@ -109,7 +109,7 @@ class MoviesServise {
       const response = await axios.get(url);
       const data = await response.data;
       const moviesSort = await data.results;
-
+  
       const genres = await this.fetchGenres();
       const getGenres = localStorage.getItem(LOCKALSTORAGE_KEY);
 
@@ -117,7 +117,19 @@ class MoviesServise {
         const parsedGetGenres = JSON.parse(getGenres);
 
         const movies = moviesSort.map(movie => {
-          const { poster_path, title, genre_ids, release_date, id } = movie;
+          const {
+            poster_path,
+            title,
+            genre_ids,
+            release_date,
+            id,
+            original_title,
+            backdrop_path,
+            overview,
+            popularity,
+            vote_average,
+            vote_count,
+          } = movie;
           this.movieId = id;
 
           const movieGenres = genre_ids.map(genreId => {
@@ -136,6 +148,12 @@ class MoviesServise {
                 : movieGenres.slice(0, 2).join(', ') + ', Other',
             releaseDate: release_date.slice(0, 4),
             id,
+            original_title,
+            backdropPath: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
+            overview,
+            popularity: popularity.toFixed(1),
+            voteAverage: vote_average.toFixed(1),
+            vote_count,
           };
         });
         this.allPages = data.total_pages;
