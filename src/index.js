@@ -1,3 +1,8 @@
+ modal-students
+
+//  modal-aboutMovie
+
+ main
 //import './js/modal-aboutMovie';
 
 import { watchedBtn, queueBtn } from './js/add-watsh-que.js';
