@@ -1,4 +1,5 @@
 import moviesService from './movies-service';
+import { renderPagination, FOR_POPULAR } from './pagination'
 
 const refs = {
   moviesDivEl: document.querySelector('.movies__container'),
@@ -12,11 +13,12 @@ async function renderMovieCard(movies) {
     const movies = await moviesService.fetchPopularMovies();
     console.log(movies);
     createMovieCardMarkup(movies);
+    renderPagination(moviesService.page, moviesService.allPages, FOR_POPULAR)
   } catch (error) {
     console.log(error);
   }
 }
-function createMovieCardMarkup(movies) {
+export function createMovieCardMarkup(movies) {
   const movieCardMarkup = movies
     .map(({ posterPath, title, genreIds, releaseDate, id }) => {
       return `
@@ -32,5 +34,5 @@ function createMovieCardMarkup(movies) {
           `;
     })
     .join('');
-  refs.moviesListEl.insertAdjacentHTML('beforeend', movieCardMarkup);
+  refs.moviesListEl.innerHTML = movieCardMarkup;
 }

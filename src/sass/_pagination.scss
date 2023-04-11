@@ -1,6 +1,6 @@
 .wrapper__pagination {
     margin-bottom: 60px;
-    margin-top: 60px;
+    
     margin-left: auto;
     margin-right: auto;
 }
@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-family: var(--font-family);
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
