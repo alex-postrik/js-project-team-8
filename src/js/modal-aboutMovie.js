@@ -1,14 +1,19 @@
-const KEY_CODE_ESC = "Escape";
+setTimeout(() => {
+    const KEY_CODE_ESC = "Escape";
 
 const refs = {
     modalContainer: document.querySelector(".modal-about-movie"),
     backdrop: document.querySelector('.backdrop'),
     closeBtn: document.querySelector('[data-close-modal="btn-modal-close-about-movie"]'),
+<<<<<< local-storage-q
     openModal: document.querySelector('.movies__container')
+=======
+    openModal: document.querySelector('.movies__list')
+>>>>>> main
 };
 
-refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 
+<<<<<< local-storage-q
 function onOpenModalAboutMovies(e) {
         if (e.target.nodeName !== 'IMG') {
             return;
@@ -86,15 +91,44 @@ function onCloseModalAboutMovies() {
     refs.backdrop.removeEventListener('click', onCloseModalAboutMoviesClickBackdrop);
     window.removeEventListener('keydown', onCloseKeyEscPress);
 }
+=======
+// console.log(refs.openModal);
 
-function onCloseModalAboutMoviesClickBackdrop(e) {
-    if (e.currentTarget === e.target) {
-        onCloseModalAboutMovies();
+if (refs.openModal) {
+    refs.openModal.addEventListener('click', onOpenModalAboutMovies);
+
+    function onOpenModalAboutMovies(e) {
+        for (let i = 0; i < refs.openModal.children.length; i++){
+            if (e.target.parentNode.classList.contains("movies__thumb") || e.target.parentNode.classList.contains("movies__desc")) {
+                window.addEventListener('keydown', onCloseKeyEscPress);
+                refs.closeBtn.addEventListener('click', onCloseModalAboutMovies);
+                refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+                document.body.classList.add("show-modal-about-movie");
+                return;
+            }
+        }
+
+    }
+
+    function onCloseModalAboutMovies() {
+        document.body.classList.remove("show-modal-about-movie");
+        refs.closeBtn.removeEventListener('click', onCloseModalAboutMovies);
+        refs.backdrop.removeEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+        window.removeEventListener('keydown', onCloseKeyEscPress);
+    }
+
+    function onCloseModalAboutMoviesClickBackdrop(e) {
+        if (e.currentTarget === e.target) {
+            onCloseModalAboutMovies();
+        }
+    }
+>>>>>> main
+
+    function onCloseKeyEscPress(e) {
+        if (e.code === KEY_CODE_ESC) {
+            onCloseModalAboutMovies();
+        }
     }
 }
+}, 500)
 
-function onCloseKeyEscPress(e) {
-    if (e.code === KEY_CODE_ESC) {
-        onCloseModalAboutMovies();
-    } 
-}
