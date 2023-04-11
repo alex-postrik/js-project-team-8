@@ -1,4 +1,5 @@
 import moviesService from './movies-service';
+import { onAddQ } from './local-storage-queue';
 
 
 const KEY_CODE_ESC = "Escape";
@@ -57,9 +58,9 @@ function onOpenModalAboutMovies(e) {
 
 
 async function renderMovie(currentMovieId) {
-  try {
-    const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
-      const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
+    try {
+        const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
+        const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
             <svg class="icon-close">
                 <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close" class="iconSVG-close"></use>
             </svg>
@@ -111,11 +112,16 @@ async function renderMovie(currentMovieId) {
 `;
       
       
-    refs.modalContainer.innerHTML = createMovieMarkup; 
-    document.querySelector('.btn-modal-close-about-movie').addEventListener('click', onCloseModalAboutMovies);
+        refs.modalContainer.innerHTML = createMovieMarkup;
+        const qBtn = document.querySelector(".btn-add-queue");
+        // const wBtn = document.querySelector(".btn-add-watched");
+        qBtn.addEventListener('click', onAddQ(currentMovieId));
+
+        document.querySelector('.btn-modal-close-about-movie').addEventListener('click', onCloseModalAboutMovies);
 
  
-  } catch (error) {
-    console.log(error);
-  }
+    } catch (error) {
+        console.log(error);
+    }
 }
+
