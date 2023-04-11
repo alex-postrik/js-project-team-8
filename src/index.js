@@ -15,4 +15,8 @@ import './js/card';
 import './js/modal.info';
 
 import * as myModuleCard from './js/card';
+origin/features/buttonAddtoWatched
+import './js/addToWatched';
+=======
 import './js/pagination';
+main
