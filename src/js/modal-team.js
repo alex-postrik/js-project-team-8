@@ -21,9 +21,12 @@ function createUnit(data) {
     .join('');
 }
 
+
+
 refs.openModalBtn.addEventListener('click', openModal);
 const markup = createUnit(teamItem);
-const modal = basicLightbox.create(`<div class="modal"> 
+const modal =
+  basicLightbox.create(`<div class="modal"> 
 ${markup}
 </div>`);
 
