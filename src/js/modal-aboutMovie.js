@@ -1,5 +1,7 @@
 import moviesService from './movies-service';
 import { onAddQ } from './local-storage-queue';
+import { onAddW } from './addToWatched';
+
 
 
 const KEY_CODE_ESC = "Escape";
@@ -62,6 +64,8 @@ if (refs.openModal) {
     try {
         const Q_KEY = 'movies in queue';
         const movieCheck = localStorage.getItem(Q_KEY);
+        const W_KEY = 'movies in watched';
+        const movieChecked = localStorage.getItem(W_KEY);
         const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
         const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
             <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16">
@@ -125,7 +129,15 @@ if (refs.openModal) {
         qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
         console.log(qBtn.textContent);
 
-            
+            const addWatchedBtn = document.querySelector('.btn-add-watched');
+         if (movieChecked) {
+            if (movieChecked.includes(currentMovieId))
+                addWatchedBtn.textContent = 'remove from watched';
+       }
+
+        addWatchedBtn.addEventListener('click', () =>onAddW(currentMovieId));
+console.log(addWatchedBtn.textContent);
+
         
        
     
