@@ -29,14 +29,18 @@ if (refs.openModal) {
     
         if (e.target.closest('.movies__item')) {
             window.addEventListener('keydown', onCloseKeyEscPress);
-            refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-            document.body.classList.add("show-modal-about-movie");
+            if (refs.backdrop) {
+                refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+                document.body.classList.add("show-modal-about-movie");
 
-            const child = e.target;
-            const parent = child.closest('.movies__item');
-            const currentMovieId = parent.dataset.movies;
-    
-            renderMovie(currentMovieId);
+                const child = e.target;
+                const parent = child.closest('.movies__item');
+                const currentMovieId = parent.dataset.movies;
+        
+                renderMovie(currentMovieId);
+            }
+            // refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+            
         
         }
     }
