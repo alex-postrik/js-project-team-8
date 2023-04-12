@@ -18,13 +18,19 @@
 
 @import './components/header-lib';
 
-@import './components/cards';
+@import './components/search';
 
-@import './components/searchKeyWord';
+@import './components/cards';
 
 @import './components/container-lib';
 
 
 @import './components/modal-aboutMovie';
 
+
+@import './components/scroll';
+
+
 @import './components/footer';
+
+@import './components/modal-team.scss';

@@ -1,41 +1,71 @@
-setTimeout(() => {
-    const KEY_CODE_ESC = "Escape";
+import moviesService from './movies-service';
+import { onAddQ } from './local-storage-queue';
 
-    const refs = {
-      modalContainer: document.querySelector('.modal-about-movie'),
-      backdrop: document.querySelector('.backdrop'),
-      closeBtn: document.querySelector(
-        '[data-close-modal="btn-modal-close-about-movie"]'
-      ),
 
-      openModal: document.querySelector('.movies__container'),
-      openModal: document.querySelector('.movies__list'),
-    };
+const KEY_CODE_ESC = "Escape";
 
-  function onOpenModalAboutMovies(e) {
-        if (e.target.nodeName !== 'IMG') {
-            return;
+const refs = {
+    modalContainer: document.querySelector(".modal-about-movie"),
+    backdrop: document.querySelector('.backdrop'),
+    // closeBtn: document.querySelector('[data-close-modal="btn-modal-close-about-movie"]'),
+    // openModal: document.querySelector('.movies__container'),
+    openModal: document.querySelector('.movies__list')
+};
+
+
+if (refs.openModal) {
+    refs.openModal.addEventListener('click', onOpenModalAboutMovies);
+
+
+    function onOpenModalAboutMovies(e) {
+        e.preventDefault();
+    
+    
+        if (e.target.closest('.movies__item')) {
+            window.addEventListener('keydown', onCloseKeyEscPress);
+            refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+            document.body.classList.add("show-modal-about-movie");
+
+            const child = e.target;
+            const parent = child.closest('.movies__item');
+            const currentMovieId = parent.dataset.movies;
+    
+            renderMovie(currentMovieId);
         }
-    e.preventDefault();
-    
-    window.addEventListener('keydown', onCloseKeyEscPress);
-    // refs.closeBtn.addEventListener('click', onCloseModalAboutMovies);
-    refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-    document.body.classList.add("show-modal-about-movie");
-    console.log(e.target)
+    }
+}
 
-    {
-    
-}
- 
-}
-function renderMovie(movie) {
-    const createMovieMarkup = ` <button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
+    function onCloseModalAboutMovies() {
+        document.body.classList.remove("show-modal-about-movie");
+        // refs.closeBtn.removeEventListener('click', onCloseModalAboutMovies);
+        refs.backdrop.removeEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+        window.removeEventListener('keydown', onCloseKeyEscPress);
+    }
+
+    function onCloseModalAboutMoviesClickBackdrop(e) {
+        if (e.currentTarget === e.target) {
+            onCloseModalAboutMovies();
+        }
+    }
+
+    function onCloseKeyEscPress(e) {
+        if (e.code === KEY_CODE_ESC) {
+            onCloseModalAboutMovies();
+        }
+    }
+
+
+
+
+async function renderMovie(currentMovieId) {
+    try {
+        const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
+        const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
             <svg class="icon-close">
-                <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close"></use>
+                <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close" class="iconSVG-close"></use>
             </svg>
         </button>
- <img src="${movie.src}"
+ <img src="${movie.posterPath}"
             alt="images-movie" class="images-movie-modal">
 <div class="about-movie">
 <h1 class="name-movie">${movie.title}</h1>
@@ -56,7 +86,7 @@ function renderMovie(movie) {
                 </ul>
                 <ul class="characteristics-value-list">
                     <li class="characteristics-value-element">
-                          <p class="characteristics-value-text"><span class="rating-movie">${movie.vote_average}</span class="characteristic-text"><span> / </span>${movie.vote_count}
+                          <p class="characteristics-value-text"><span class="rating-movie">${movie.voteAverage}</span class="characteristic-text"><span> / </span>${movie.vote_count}
                         </p>
                     </li>
                     <li class="characteristics-value-element">
@@ -66,7 +96,7 @@ function renderMovie(movie) {
                         <p class="characteristics-value-text">${movie.original_title}</p>
                     </li>
                     <li class="characteristics-value-element">
-                        <p class="characteristics-value-text">${genreIds}</p>
+                        <p class="characteristics-value-text">${movie.genres}</p>
                     </li>
                 </ul>
 
@@ -80,52 +110,25 @@ function renderMovie(movie) {
             </div>
         </div>
 `;
-    refs.modalContainer.innerHTML = createMovieMarkup; 
-}
+      
+      
+        refs.modalContainer.innerHTML = createMovieMarkup;
+    
 
-function onCloseModalAboutMovies() {
-    document.body.classList.remove("show-modal-about-movie");
-    // refs.closeBtn.removeEventListener('click', onCloseModalAboutMovies);
-    refs.backdrop.removeEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-    window.removeEventListener('keydown', onCloseKeyEscPress);
-}
-// console.log(refs.openModal);
+        document.querySelector('.btn-modal-close-about-movie').addEventListener('click', onCloseModalAboutMovies);
+            const qBtn = document.querySelector(".btn-add-queue");
+  
+        // const wBtn = document.querySelector(".btn-add-watched");
+        qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
 
-if (refs.openModal) {
-    refs.openModal.addEventListener('click', onOpenModalAboutMovies);
-
-    function onOpenModalAboutMovies(e) {
-        for (let i = 0; i < refs.openModal.children.length; i++){
-            if (e.target.parentNode.classList.contains("movies__thumb") || e.target.parentNode.classList.contains("movies__desc")) {
-                window.addEventListener('keydown', onCloseKeyEscPress);
-                refs.closeBtn.addEventListener('click', onCloseModalAboutMovies);
-                refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-                document.body.classList.add("show-modal-about-movie");
-                return;
-            }
-        }
-
-    }
-
-    function onCloseModalAboutMovies() {
-        document.body.classList.remove("show-modal-about-movie");
-        refs.closeBtn.removeEventListener('click', onCloseModalAboutMovies);
-        refs.backdrop.removeEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-        window.removeEventListener('keydown', onCloseKeyEscPress);
-    }
-
-    function onCloseModalAboutMoviesClickBackdrop(e) {
-        if (e.currentTarget === e.target) {
-            onCloseModalAboutMovies();
-        }
-    }
-
-
-    function onCloseKeyEscPress(e) {
-        if (e.code === KEY_CODE_ESC) {
-            onCloseModalAboutMovies();
-        }
+ 
+    } catch (error) {
+        console.log(error);
     }
 }
-}, 500)
+
+
+
+
+
 

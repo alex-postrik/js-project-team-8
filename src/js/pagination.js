@@ -22,8 +22,6 @@ const paginationRef = document.querySelector('.pagination');
 paginationRef.addEventListener('click', onPaginationClick);
 
 function onPaginationClick(e) {
-  e.preventDefault();
-  scrollToTop();
   if (e.target.textContent === '...') return;
 
   if (e.target.classList.contains('arrow-left')) moviesService.subtractPage();
@@ -42,6 +40,7 @@ function onPaginationClick(e) {
       renderPagination(moviesService.page, moviesService.allPages, param);
     });
   }
+  scrollToTop();
 }
 
 function scrollToTop() {
