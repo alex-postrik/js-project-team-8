@@ -68,7 +68,7 @@ if (refs.openModal) {
         const movieChecked = localStorage.getItem(W_KEY);
         const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
         const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
-            <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16">
+            <svg class="icon-close" width="14" height="14" viewBox="0 0 16 16">
                 <path d="M1 1L15 15" stroke="black" stroke-width="2"/>
                 <path d="M1 15L15 1" stroke="black" stroke-width="2"/>
             </svg>
