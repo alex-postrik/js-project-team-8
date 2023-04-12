@@ -10,6 +10,7 @@ import './js/movies-service';
 import './js/search';
 import './js/card';
 import './js/modal.info';
+import './js/trailer';
 
 import * as myModuleCard from './js/card';
 
@@ -26,3 +27,4 @@ import './js/scroll.js';
 import './js/modal-aboutMovie';
 
 import './js/modal-team';
+import './js/darck-them';
