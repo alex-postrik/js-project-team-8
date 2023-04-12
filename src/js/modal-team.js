@@ -1,5 +1,5 @@
 import { teamItem } from './storage-team';
-import * as basicLightbox from 'basiclightbox';
+// import * as basicLightbox from 'basiclightbox';
 
 const refs = {
   openModalBtn: document.querySelector('.footer-students-btn'),
@@ -21,12 +21,9 @@ function createUnit(data) {
     .join('');
 }
 
-
-
 refs.openModalBtn.addEventListener('click', openModal);
 const markup = createUnit(teamItem);
-const modal =
-  basicLightbox.create(`<div class="modal"> 
+const modal = basicLightbox.create(`<div class="modal"> 
 ${markup}
 </div>`);
 
