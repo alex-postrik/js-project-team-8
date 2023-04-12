@@ -52,18 +52,23 @@ class MoviesServise {
         vote_count,
         overview,
         original_title,
+        release_date,
       } = data;
       const movie = {
         backdropPath: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
         posterPath: `https://image.tmdb.org/t/p/w500${poster_path}`,
         title,
-        genres: genres.map(genre => genre.name).join(', '),
+        genres:
+          genres.length <= 3
+            ? genres.map(genre => genre.name).join(', ')
+            : movieGenres.slice(0, 2).join(', ') + ', Other',
         id,
         popularity: popularity.toFixed(1),
         voteAverage: vote_average.toFixed(1),
         vote_count,
         overview,
         original_title,
+        releaseDate: release_date.slice(0, 4),
       };
 
       return movie;
@@ -112,7 +117,7 @@ class MoviesServise {
       const response = await axios.get(url);
       const data = await response.data;
       const moviesSort = await data.results;
-  
+
       const genres = await this.fetchGenres();
       const getGenres = localStorage.getItem(LOCKALSTORAGE_KEY);
 

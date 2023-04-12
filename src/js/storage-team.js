@@ -25,9 +25,9 @@ export const teamItem = [
     svg: gitHub,
   },
   {
-    name: 'Oleksandr',
+    name: 'Yuliia',
     position: 'Developer',
-    gitHub: 'https://github.com/alex-postrik',
+    gitHub: 'https://github.com/YuliiaNivina',
     previewImg: Oleksandr,
     svg: gitHub,
   },
