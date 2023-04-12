@@ -40,10 +40,10 @@ class MoviesServise {
     try {
       const response = await axios.get(url);
       const data = await response.data;
-
+      console.log(response.data);
       const {
-        backdrop_path,
         poster_path,
+        backdrop_path,
         title,
         genres,
         id,
@@ -55,13 +55,16 @@ class MoviesServise {
         release_date,
       } = data;
       const movie = {
-        backdropPath: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
         posterPath: `https://image.tmdb.org/t/p/w500${poster_path}`,
+        backdropPath: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
         title,
         genres:
           genres.length <= 3
             ? genres.map(genre => genre.name).join(', ')
-            : movieGenres.slice(0, 2).join(', ') + ', Other',
+            : genres
+                .map(genre => genre.name)
+                .slice(0, 2)
+                .join(', ') + ', Other',
         id,
         popularity: popularity.toFixed(1),
         voteAverage: vote_average.toFixed(1),
@@ -70,7 +73,7 @@ class MoviesServise {
         original_title,
         releaseDate: release_date.slice(0, 4),
       };
-
+      console.log(movie);
       return movie;
     } catch (error) {
       console.error(error);
