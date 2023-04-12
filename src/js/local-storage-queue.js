@@ -1,38 +1,60 @@
-let moviesInQueue = [];
-  
-export function onAddQ(movie) {
-  let toFind = movie.id;
-  console.log(movie);
-  console.log(toFind);
-  
-    const Q_KEY = 'movies in queue';
+import moviesService from "./movies-service";
 
-    //якщо сховище порожнє - пушимо об'єкт в масив
-    if (localStorage.getItem(Q_KEY) === null) {
+
+
+let moviesInQueue = [];
+
+
+  
+export async function onAddQ(currentMovieId) {
+const qBtn = document.querySelector(".btn-add-queue");
+  console.log(qBtn);
+  const Q_KEY = 'movies in queue';
+  const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
+  console.log(currentMovieId);
+
+  const movieCheck = localStorage.getItem(Q_KEY);
+  const queue = load(Q_KEY);
+
+    // якщо сховище порожнє - пушимо об'єкт в масив
+   
+    if (movieCheck === null) {
         moviesInQueue.push(movie);
-        save(Q_KEY, moviesInQueue);
-    }
+      save(Q_KEY, moviesInQueue);
+      qBtn.textContent = 'remove from queque';
+     
+  }
     //якщо є дані - перевіряємо, чи є там айді фільму
-    else if (localStorage.getItem(Q_KEY !== null)) {
-        const movieCheck = localStorage.getItem(Q_KEY);
-        if (movieCheck.includes(toFind)) {
-              
-            const queue = load(Q_KEY);
-            //якщо об'єкт є і він один - видаляємо запис повністю
-            if (queue.length === 1) {
-                localStorage.removeItem(Q_KEY);
-            }
-          //шукаємо фільм за індексом, видаляємо з масиву та перезаписуємо
-          let indexM = queue.findIndex(movie => movie.id === toFind);
-          //видалити за індексом  
-          queue.splice(indexM, 1);
-          save(Q_KEY, queue);
+    else if (movieCheck !== null) {
+      console.log(movieCheck.includes(currentMovieId));
+       console.log(moviesInQueue.length);
+    
+      if (movieCheck.includes(currentMovieId)) {
+          if (moviesInQueue.length === 1) {
+            localStorage.removeItem(Q_KEY);
+            moviesInQueue = [];
+             qBtn.textContent = 'add to queque';
+
+        }
+          else {
+
+              //шукаємо фільм за індексом, видаляємо з масиву та перезаписуємо
+                    let indexM = queue.map(el => el.id).indexOf(Number(currentMovieId));
+          console.log(indexM);
+            queue.splice(indexM, 1);
+            moviesInQueue = queue;
+            save(Q_KEY, queue);
+            qBtn.textContent = 'add to queque';
+        }
+        
         }
         else {
             //якщо фільму немає, пушимо в масив та перезаписуємо
             moviesInQueue.push(movie);  
-            save(Q_KEY, moviesInQueue);
-        }
+        save(Q_KEY, moviesInQueue);
+        qBtn.textContent = 'remove from queque';
+        console.log(moviesInQueue.length);
+      }
     }
            }
 

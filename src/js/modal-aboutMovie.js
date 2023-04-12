@@ -1,4 +1,5 @@
 import moviesService from './movies-service';
+import { onAddQ } from './local-storage-queue';
 
 
 const KEY_CODE_ESC = "Escape";
@@ -12,27 +13,28 @@ const refs = {
 };
 
 
+if (refs.openModal) {
+    refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 
-refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 
-
-function onOpenModalAboutMovies(e) {
-    e.preventDefault();
+    function onOpenModalAboutMovies(e) {
+        e.preventDefault();
     
-    window.addEventListener('keydown', onCloseKeyEscPress);
-    // refs.closeBtn.addEventListener('click', onCloseModalAboutMovies);
-    refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-    document.body.classList.add("show-modal-about-movie");
-    // console.log(e.target.nodeName)
-    const child = e.target;
-    const parent = child.closest('.movies__item');
-    // console.log(parent.dataset.movies);
-    const currentMovieId = parent.dataset.movies;
-    // console.log(currentMovieId)
-    renderMovie(currentMovieId);
     
+        if (e.target.closest('.movies__item')) {
+            window.addEventListener('keydown', onCloseKeyEscPress);
+            refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+            document.body.classList.add("show-modal-about-movie");
+
+            const child = e.target;
+            const parent = child.closest('.movies__item');
+            const currentMovieId = parent.dataset.movies;
+    
+            renderMovie(currentMovieId);
+        
+        }
+    }
 }
-
 
     function onCloseModalAboutMovies() {
         document.body.classList.remove("show-modal-about-movie");
@@ -56,16 +58,18 @@ function onOpenModalAboutMovies(e) {
 
 
 
-async function renderMovie(currentMovieId) {
-  try {
-    const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
-      console.log(movie);
-      const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
-            <svg class="icon-close">
-                <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close" class="iconSVG-close"></use>
+ async function renderMovie(currentMovieId) {
+    try {
+        const Q_KEY = 'movies in queue';
+        const movieCheck = localStorage.getItem(Q_KEY);
+        const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
+        const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
+            <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M1 1L15 15" stroke="black" stroke-width="2"/>
+                <path d="M1 15L15 1" stroke="black" stroke-width="2"/>
             </svg>
         </button>
- <img src="${movie.backdropPath}"
+ <img src="${movie.posterPath}"
             alt="images-movie" class="images-movie-modal">
 <div class="about-movie">
 <h1 class="name-movie">${movie.title}</h1>
@@ -112,11 +116,34 @@ async function renderMovie(currentMovieId) {
 `;
       
       
-    refs.modalContainer.innerHTML = createMovieMarkup; 
-    document.querySelector('.btn-modal-close-about-movie').addEventListener('click', onCloseModalAboutMovies);
+        refs.modalContainer.innerHTML = createMovieMarkup;
+        const qBtn = document.querySelector(".btn-add-queue");
+        if (movieCheck) {
+            if (movieCheck.includes(currentMovieId))
+                qBtn.textContent = 'remove from queque';
+       }
+        qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
+        console.log(qBtn.textContent);
+
+            
+        
+       
+    
+
+        document.querySelector('.btn-modal-close-about-movie').addEventListener('click', onCloseModalAboutMovies);
+     
+  
+        // const wBtn = document.querySelector(".btn-add-watched");
+       
 
  
-  } catch (error) {
-    console.log(error);
-  }
+    } catch (error) {
+        console.log(error);
+    }
 }
+
+
+
+
+
+

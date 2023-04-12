@@ -29,6 +29,6 @@ function addToWatched(movie) {
 }
 
 
-addToWatchedButton.addEventListener('click', () => {
-  addToWatched(movieData);
-});
+// addToWatchedButton.addEventListener('click', () => {
+//   addToWatched(movieData);
+// });
