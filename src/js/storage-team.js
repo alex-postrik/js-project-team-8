@@ -48,13 +48,12 @@ export const teamItem = [
     svg: gitHub,
   },
   {
+
     name: 'Igor',
     position: 'Developer',
     gitHub: 'https://github.com/IgorPetrenko72',
     previewImg: Igor,
-    svg: gitHub,
-  },
-  {
+
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
@@ -93,6 +92,18 @@ export const teamItem = [
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
+    previewImg: Oleksandr,
+    svg: gitHub,
+  },
+  {
+
+    name: 'Oleksandr',
+    position: 'Developer',
+    gitHub: 'https://github.com/alex-postrik',
+
+    name: 'Anastasiia',
+    position: 'Developer',
+    gitHub: 'https://github.com/nastyamara',
     previewImg: Oleksandr,
     svg: gitHub,
   },

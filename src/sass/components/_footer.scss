@@ -1,5 +1,6 @@
 .footer {
-  background-color: #f7f7f7;
+  background-color: 
+#F7F7F7;
   text-align: center;
   padding: 30px 0;
   margin-top: auto;
@@ -13,23 +14,26 @@
     font-size: 14px;
     line-height: 16px;
   }
+}
 
-  &__icon {
-    margin: 12px 10px 0;
-    display: inline-block;
+.footer__icon {
+  padding-left:10, 33;
+ 
+}
 
-  }
-
-  &__btn {
-    color:  #545454;
-    border: none;
-    text-decoration: underline;
-    padding: 0;
-    background-color: transparent;
+.footer-students-btn {
+  color: 
+#545454;
+  border: none;
+text-decoration: underline;
+  background-color: transparent;
     cursor: pointer;
-    transition: color ease-out 0.3s;
-
-    &:hover,
+padding-bottom: 2px;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+transition: all .25s cubic-bezier(.4,0,.2,1);
+&:hover,
     &:active,
     &:focus {
       color: #000000;
@@ -40,4 +44,3 @@
       height: 19px;
     }
   }
-}
