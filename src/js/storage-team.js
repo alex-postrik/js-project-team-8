@@ -32,9 +32,15 @@ export const teamItem = [
     svg: gitHub,
   },
   {
+
+    name: 'Alina',
+    position: 'Developer',
+    gitHub: 'https://github.com/alinarieznik',
+
     name: 'Denis',
     position: 'Developer',
     gitHub: 'https://github.com/denis-bw',
+
     previewImg: Oleksandr,
     svg: gitHub,
   },
@@ -99,7 +105,7 @@ export const teamItem = [
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
-    previewImg: Oleksandr ,
+    previewImg: Oleksandr,
     svg: gitHub,
   },
 ];
