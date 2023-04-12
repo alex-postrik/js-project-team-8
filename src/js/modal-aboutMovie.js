@@ -1,6 +1,10 @@
 import moviesService from './movies-service';
 import { onAddQ } from './local-storage-queue';
+
+import { trailerWatched } from './trailer';
+
 import { onAddW } from './addToWatched';
+
 
 
 
@@ -116,9 +120,9 @@ if (refs.openModal) {
                 <button class="btn-add-watched" type="button">add to Watched</button>
                 <button class="btn-add-queue" type="button">add to queue</button>
             </div>
+            <button class="movies__trailer" type="button">Trailer</button>
         </div>
 `;
-      
       
         refs.modalContainer.innerHTML = createMovieMarkup;
         const qBtn = document.querySelector(".btn-add-queue");
@@ -128,6 +132,10 @@ if (refs.openModal) {
        }
         qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
         console.log(qBtn.textContent);
+     origin/searchMain
+        const trailerBtn =document.querySelector('.movies__trailer');
+        trailerWatched(trailerBtn);
+
 
             const addWatchedBtn = document.querySelector('.btn-add-watched');
          if (movieChecked) {
@@ -137,6 +145,7 @@ if (refs.openModal) {
 
         addWatchedBtn.addEventListener('click', () =>onAddW(currentMovieId));
 console.log(addWatchedBtn.textContent);
+
 
         
        

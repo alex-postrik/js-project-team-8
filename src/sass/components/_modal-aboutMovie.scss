@@ -286,3 +286,44 @@ body.show-modal-about-movie .modal-about-movie {
     fill: currentColor;
     
 }
+
+
+//Для кнопки трейлеру
+.movies__trailer {
+    margin-top: 15px;
+    margin-left: 50px;
+    padding: 10px 12px;
+        
+    width: 125px;
+    height: 34px;
+    border: none;
+    background: var(--secondary-text-color);
+    box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+    border-radius: 100px;
+    cursor: pointer;
+    background: #FFFFFF;
+
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--secondary-text-color);    
+        @media (min-width: 768px) {
+        margin-top: 15px;
+        margin-left: 80px;
+            width: 90px;
+            height: 38px;
+        }
+    
+        @media (min-width: 1200px) {
+            margin-left: 110px;
+            width: 100px;
+            height: 42px;
+        }
+
+        &:hover {
+            background: var(--secondary-text-color);
+        color: #FFFFFF;
+        }
+    }
