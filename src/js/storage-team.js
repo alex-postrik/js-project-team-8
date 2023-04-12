@@ -101,14 +101,20 @@ export const teamItem = [
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
+    previewImg: Oleksandr,
+    svg: gitHub,
+},
 
+{
     name: 'Anastasiia',
     position: 'Developer',
     gitHub: 'https://github.com/nastyamara',
     previewImg: Oleksandr,
     svg: gitHub,
   },
+  
   {
+
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
