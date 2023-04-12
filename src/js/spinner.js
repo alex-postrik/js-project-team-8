@@ -25,7 +25,7 @@ export default function onPageLoadingSpinner() {
 
   addLoader();
   if (document.readyState === 'complete') {
-    setTimeout(removeLoader, 500);
+    setTimeout(removeLoader, 1000);
   }
 }
 
