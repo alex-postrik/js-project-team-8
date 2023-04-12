@@ -1,8 +1,4 @@
-
-
-
 const spinner = document.querySelector('.spinner');
-
 // function showSpinner() {
 //   spinner.style.display = 'block';
 // }
@@ -32,3 +28,13 @@ export default function onPageLoadingSpinner() {
     setTimeout(removeLoader, 500);
   }
 }
+
+function showSpinner() {
+  spinner.style.display = 'flex';
+}
+
+function hiddenSpinner() {
+  spinner.style.display = 'none';
+}
+
+hiddenSpinner();

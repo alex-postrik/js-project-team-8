@@ -13,27 +13,27 @@ const refs = {
 };
 
 
+if (refs.openModal) {
+    refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 
-refs.openModal.addEventListener('click', onOpenModalAboutMovies);
 
-
-function onOpenModalAboutMovies(e) {
-    e.preventDefault();
+    function onOpenModalAboutMovies(e) {
+        e.preventDefault();
     
     
-    if (e.target.closest('.movies__item')) {
-        window.addEventListener('keydown', onCloseKeyEscPress);
-        refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-        document.body.classList.add("show-modal-about-movie");
+        if (e.target.closest('.movies__item')) {
+            window.addEventListener('keydown', onCloseKeyEscPress);
+            refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+            document.body.classList.add("show-modal-about-movie");
 
-        const child = e.target;
-        const parent = child.closest('.movies__item'); 
-        const currentMovieId = parent.dataset.movies;
+            const child = e.target;
+            const parent = child.closest('.movies__item');
+            const currentMovieId = parent.dataset.movies;
     
-        renderMovie(currentMovieId);
+            renderMovie(currentMovieId);
+        }
     }
 }
-
 
     function onCloseModalAboutMovies() {
         document.body.classList.remove("show-modal-about-movie");
