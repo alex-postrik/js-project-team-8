@@ -26,3 +26,4 @@ import './js/scroll.js';
 import './js/modal-aboutMovie';
 
 import './js/modal-team';
+import './js/darck-them';
