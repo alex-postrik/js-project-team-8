@@ -36,19 +36,14 @@ export const teamItem = [
     name: 'Alina',
     position: 'Developer',
     gitHub: 'https://github.com/alinarieznik',
-
-    name: 'Denis',
-    position: 'Developer',
-    gitHub: 'https://github.com/denis-bw',
-
     previewImg: Oleksandr,
     svg: gitHub,
   },
 
   {
-    name: 'Oleksandr',
+    name: 'Denis',
     position: 'Developer',
-    gitHub: 'https://github.com/alex-postrik',
+    gitHub: 'https://github.com/denis-bw',
     previewImg: Oleksandr,
     svg: gitHub,
   },
