@@ -1,4 +1,5 @@
-const spinner = document.querySelector('.spinner');
+// const spinner = document.querySelector('.spinner');
+
 // function showSpinner() {
 //   spinner.style.display = 'block';
 // }
@@ -7,15 +8,15 @@ const spinner = document.querySelector('.spinner');
 //   spinner.style.display = 'none';
 // }
 
-
-// const refs = { loader: document.querySelector('.spinner') };
+const refs = { loader: document.querySelector('.spinner') };
 
 function removeLoader() {
-  spinner.classList.add('loader-hidden');
+  refs.loader.classList.add('loader-hidden');
 }
 
 function addLoader() {
-  spinner.classList.remove('loader-hidden');
+  refs.loader.classList.remove('loader-hidden');
+  
 }
 
 document.addEventListener('readystatechange', onPageLoadingSpinner);
@@ -28,13 +29,3 @@ export default function onPageLoadingSpinner() {
     setTimeout(removeLoader, 1000);
   }
 }
-
-function showSpinner() {
-  spinner.style.display = 'flex';
-}
-
-function hiddenSpinner() {
-  spinner.style.display = 'none';
-}
-
-hiddenSpinner();
