@@ -8,7 +8,7 @@
   bottom: 0;
   right: 0;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color:  rgba(0, 0, 0, 0.2);
 
   border-radius: 4px;
 
@@ -55,8 +55,8 @@
 
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #fff;
-  border-radius: 30px;
+  background-color:  rgb(246, 243, 243);
+  border: 3px solid #b92f2c;
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 20;
@@ -82,7 +82,7 @@
   }
 }
 .madal-team__title {
-  
+
 }
 .super-team {
   display: flex;
@@ -98,7 +98,7 @@
 .unit {
     padding: 10px;
   height: auto;
-    border: 1px solid;
+   border: 1.5px solid #b92f2c;
     height: auto;
     width: calc(50% - 20px);
     margin: 20px;
@@ -173,10 +173,10 @@
 .lostil {
   display: none;
 }
-$basicLightbox__background: rgba(0, 0, 0, 0.8) !default;
-$basicLightbox__zIndex: 1000 !default;
-$basicLightbox__duration: 0.4s !default;
-$basicLightbox__timing: ease !default;
+$basicLightbox__background: rgba(0, 0, 0, 0.2);
+$basicLightbox__zIndex: 1000;
+$basicLightbox__duration: 0.4s;
+$basicLightbox__timing: ease;
 .basicLightbox {
   position: fixed;
   display: flex;
