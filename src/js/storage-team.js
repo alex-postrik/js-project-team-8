@@ -32,7 +32,6 @@ export const teamItem = [
     svg: gitHub,
   },
   {
-
     name: 'Alina',
     position: 'Developer',
     gitHub: 'https://github.com/alinarieznik',
@@ -48,9 +47,38 @@ export const teamItem = [
     svg: gitHub,
   },
   {
+    name: 'Igor',
+    position: 'Developer',
+    gitHub: 'https://github.com/IgorPetrenko72',
+    previewImg: Oleksandr,
+    svg: gitHub,
+  },
+  {
+    name: 'Mariia',
+    position: 'Developer',
+    gitHub: 'https://github.com/Mariia848912',
+    previewImg: Oleksandr,
+    svg: gitHub,
+  },
+
+  {
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
+    previewImg: Oleksandr,
+    svg: gitHub,
+  },
+  {
+    name: 'Oleksandr',
+    position: 'Developer',
+    gitHub: 'https://github.com/alex-postrik',
+    previewImg: Oleksandr,
+    svg: gitHub,
+  },
+  {
+    name: 'Anton',
+    position: 'Developer',
+    gitHub: 'https://github.com/Anton-Yarema',
     previewImg: Oleksandr,
     svg: gitHub,
   },
@@ -69,27 +97,24 @@ export const teamItem = [
     svg: gitHub,
   },
   {
+
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
     previewImg: Oleksandr,
     svg: gitHub,
-  },
-  {
-    name: 'Oleksandr',
+},
+
+{
+    name: 'Anastasiia',
     position: 'Developer',
-    gitHub: 'https://github.com/alex-postrik',
+    gitHub: 'https://github.com/nastyamara',
     previewImg: Oleksandr,
     svg: gitHub,
   },
+  
   {
-    name: 'Oleksandr',
-    position: 'Developer',
-    gitHub: 'https://github.com/alex-postrik',
-    previewImg: Oleksandr,
-    svg: gitHub,
-  },
-  {
+
     name: 'Oleksandr',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
@@ -97,3 +122,5 @@ export const teamItem = [
     svg: gitHub,
   },
 ];
+
+

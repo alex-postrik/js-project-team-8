@@ -1,34 +1,76 @@
-const addToWatchedButton = document.querySelector('.add-to-watched');
+import moviesService from "./movies-service";
 
+let moviesAddWatched = [];
+  
+export async function onAddW(currentMovieId) {
 
-const movieData = {
-  title: 'Movie Title'
+  const addWatchedBtn = document.querySelector('.btn-add-watched');
+  console.log(addWatchedBtn);
+  const W_KEY = 'movies in watched';
+  const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
+  console.log(currentMovieId);
+
+  const movieChecked = localStorage.getItem(W_KEY);
+  const watched = load(W_KEY);
+
+    // якщо сховище порожнє - пушимо об'єкт в масив
+   
+    if (movieChecked === null) {
+        moviesAddWatched.push(movie);
+      save(W_KEY, moviesAddWatched);
+     addWatchedBtn.textContent = 'remove from watched';
+  }
+    //якщо є дані - перевіряємо, чи є там айді фільму
+    else if (movieChecked !== null) {
+      console.log(movieChecked.includes(currentMovieId));
+       console.log(moviesAddWatched.length);
+    
+      if (movieChecked.includes(currentMovieId)) {
+          if (moviesAddWatched.length === 1) {
+            localStorage.removeItem(W_KEY);
+            moviesAddWatched = [];
+            addWatchedBtn.textContent = 'add to watched';
+        }
+          else {
+
+              //шукаємо фільм за індексом, видаляємо з масиву та перезаписуємо
+                    let indexM = watched.map(el => el.id).indexOf(Number(currentMovieId));
+          console.log(indexM);
+            watched.splice(indexM, 1);
+            moviesAddWatched = watched;
+            save(W_KEY, watched);
+            addWatchedBtn.textContent = 'add to watched';
+        }
+        
+        }
+        else {
+            //якщо фільму немає, пушимо в масив та перезаписуємо
+            moviesAddWatched.push(movie);  
+        save(W_KEY, moviesAddWatched);
+        addWatchedBtn.textContent = 'remove from watched';
+        console.log(moviesAddWatched.length);
+      }
+    }
+  
+    
+  
+           }
+
+const load = key => {
+  try {
+    const serializedState = localStorage.getItem(key);
+    return serializedState === null ? undefined : JSON.parse(serializedState);
+  } catch (error) {
+    console.error("Get state error: ", error.message);
+  }
 };
 
-
-function addToWatched(movie) {
-  
-  const watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
-
-  
-  const movieExists = watchedMovies.some((watchedMovie) => watchedMovie.title === movie.title);
-
-  
-  if (!movieExists) {
-    watchedMovies.push(movie);
-    localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
-    alert(`${movie.title} був доданий до списку переглянутих фільмів.`);
-    addToWatchedButton.innerText = 'Removed';
-  } else {
-    
-    const updatedWatchedMovies = watchedMovies.filter((watchedMovie) => watchedMovie.title !== movie.title);
-    localStorage.setItem('watchedMovies', JSON.stringify(updatedWatchedMovies));
-    alert(`${movie.title} був видалений зі списку переглянутих фільмів.`);
-    addToWatchedButton.innerText = 'Add to Watched';
+    const save = (key, value) => {
+  try {
+    const serializedState = JSON.stringify(value);
+    localStorage.setItem(key, serializedState);
+  } catch (error) {
+    console.error("Set state error: ", error.message);
   }
-}
+};
 
-
-// addToWatchedButton.addEventListener('click', () => {
-//   addToWatched(movieData);
-// });

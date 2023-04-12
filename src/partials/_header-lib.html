@@ -1,4 +1,5 @@
 <header class="header-main">
+	<div class="container">
   <div class="header-container">
     <div class="header-main__container">
       <nav class="header-nav">
@@ -32,6 +33,7 @@
         </button>
       </form>
     </div>
+
     <p class="result visually-hidden">
       Search result not successful. Enter the correct movie name.
     </p>
@@ -52,4 +54,21 @@
       </button>
     </div>
   </div>
+</header>
+
+		<p class="result visually-hidden">Search result not successful. Enter the correct movie name.</p>
+		<div class="logo">
+			<a class="link logo-link" href="./index.html" aria-label="Logo">
+				<svg class="icon-film" width="32" height="32">
+					<use href="./image/symbol.svg#icon-film"></use>
+				</svg>
+				<span class="logo__label">Filmoteka</span>
+			</a>
+		</div>
+		<div class="header-lib-button">
+			<button type="button" class="header-movi-btn" data-id="watched-btn">Watched</button>
+			<button type="button" class="header-movi-btn" data-id="queue-btn">queue</button>
+		</div>
+	</div>
+</div>
 </header>

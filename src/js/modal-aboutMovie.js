@@ -1,6 +1,12 @@
 import moviesService from './movies-service';
 import { onAddQ } from './local-storage-queue';
 
+import { trailerWatched } from './trailer';
+
+import { onAddW } from './addToWatched';
+
+
+
 
 const KEY_CODE_ESC = "Escape";
 
@@ -23,14 +29,18 @@ if (refs.openModal) {
     
         if (e.target.closest('.movies__item')) {
             window.addEventListener('keydown', onCloseKeyEscPress);
-            refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-            document.body.classList.add("show-modal-about-movie");
+            if (refs.backdrop) {
+                refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+                document.body.classList.add("show-modal-about-movie");
 
-            const child = e.target;
-            const parent = child.closest('.movies__item');
-            const currentMovieId = parent.dataset.movies;
-    
-            renderMovie(currentMovieId);
+                const child = e.target;
+                const parent = child.closest('.movies__item');
+                const currentMovieId = parent.dataset.movies;
+        
+                renderMovie(currentMovieId);
+            }
+            // refs.backdrop.addEventListener('click', onCloseModalAboutMoviesClickBackdrop);
+            
         
         }
     }
@@ -62,9 +72,11 @@ if (refs.openModal) {
     try {
         const Q_KEY = 'movies in queue';
         const movieCheck = localStorage.getItem(Q_KEY);
+        const W_KEY = 'movies in watched';
+        const movieChecked = localStorage.getItem(W_KEY);
         const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
         const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
-            <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16">
+            <svg class="icon-close" width="14" height="14" viewBox="0 0 16 16">
                 <path d="M1 1L15 15" stroke="black" stroke-width="2"/>
                 <path d="M1 15L15 1" stroke="black" stroke-width="2"/>
             </svg>
@@ -112,9 +124,9 @@ if (refs.openModal) {
                 <button class="btn-add-watched" type="button">add to Watched</button>
                 <button class="btn-add-queue" type="button">add to queue</button>
             </div>
+            <button class="movies__trailer" type="button">Trailer</button>
         </div>
 `;
-      
       
         refs.modalContainer.innerHTML = createMovieMarkup;
         const qBtn = document.querySelector(".btn-add-queue");
@@ -124,8 +136,21 @@ if (refs.openModal) {
        }
         qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
         console.log(qBtn.textContent);
+     origin/searchMain
+        const trailerBtn =document.querySelector('.movies__trailer');
+        trailerWatched(trailerBtn);
 
-            
+
+            const addWatchedBtn = document.querySelector('.btn-add-watched');
+         if (movieChecked) {
+            if (movieChecked.includes(currentMovieId))
+                addWatchedBtn.textContent = 'remove from watched';
+       }
+
+        addWatchedBtn.addEventListener('click', () =>onAddW(currentMovieId));
+console.log(addWatchedBtn.textContent);
+
+
         
        
     
