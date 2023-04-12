@@ -1,1 +1,3 @@
-import './js/search'
+import './js/search';
+
+import './js/pagination-library';

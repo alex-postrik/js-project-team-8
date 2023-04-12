@@ -1,6 +1,5 @@
 import moviesService from './movies-service';
-import {createMovieCardMarkup} from './card';
-
+import { createMovieCardMarkup } from './card';
 
 export const FOR_POPULAR = 1;
 export const FOR_SEARCH = 2;
@@ -18,39 +17,36 @@ export let param = 1;
 
 //testPaginetion();
 
-
 const paginationRef = document.querySelector('.pagination');
 
 paginationRef.addEventListener('click', onPaginationClick);
 
 function onPaginationClick(e) {
   e.preventDefault();
-  scrollToTop()
+  scrollToTop();
   if (e.target.textContent === '...') return;
 
-  if (e.target.classList.contains('arrow-left'))  moviesService.subtractPage();
-  if (e.target.classList.contains('arrow-right'))  moviesService.addPage();
+  if (e.target.classList.contains('arrow-left')) moviesService.subtractPage();
+  if (e.target.classList.contains('arrow-right')) moviesService.addPage();
   if (e.target.classList.contains('pagination__button'))
-     moviesService.page = Number(e.target.textContent);
+    moviesService.page = Number(e.target.textContent);
 
   if (param === 1) {
-     moviesService.fetchPopularMovies().then(movies => {
-       createMovieCardMarkup(movies);
-       renderPagination(moviesService.page, moviesService.allPages, param)
-  });
+    moviesService.fetchPopularMovies().then(movies => {
+      createMovieCardMarkup(movies);
+      renderPagination(moviesService.page, moviesService.allPages, param);
+    });
   } else {
     moviesService.fetchSearchMovies().then(movies => {
-     createMovieCardMarkup(movies);
-     renderPagination(moviesService.page, moviesService.allPages, param)
-  });
+      createMovieCardMarkup(movies);
+      renderPagination(moviesService.page, moviesService.allPages, param);
+    });
   }
-  
-};
+}
 
 function scrollToTop() {
   window.scrollTo(0, 0);
 }
-
 
 export function renderPagination(page, pages, curParam) {
   let markup = '';
@@ -71,8 +67,7 @@ export function renderPagination(page, pages, curParam) {
 
   if (page > 4) markup += `<li class="pagination__points">...</li>`;
 
-  if (page > 3)
-    markup += `<li class="pagination__button">${page - 2}</li>`;
+  if (page > 3) markup += `<li class="pagination__button">${page - 2}</li>`;
 
   if (page > 2) markup += `<li class="pagination__button">${page - 1}</li>`;
 
@@ -98,5 +93,5 @@ export function renderPagination(page, pages, curParam) {
           stroke-linecap="round" stroke-linejoin="round" />
       </svg></li>`;
 
-  paginationRef.innerHTML = markup;  
+  paginationRef.innerHTML = markup;
 }
