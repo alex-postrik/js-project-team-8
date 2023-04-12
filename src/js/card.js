@@ -12,7 +12,7 @@ renderMovieCard();
 async function renderMovieCard(movies) {
   try {
     const movies = await moviesService.fetchPopularMovies();
-    console.log(movies);
+    // console.log(movies);
     createMovieCardMarkup(movies);
     renderPagination(moviesService.page, moviesService.allPages, FOR_POPULAR);
   } catch (error) {
