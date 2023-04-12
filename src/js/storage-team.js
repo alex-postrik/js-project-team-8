@@ -90,9 +90,9 @@ export const teamItem = [
     svg: gitHub,
   },
   {
-    name: 'Oleksandr',
+    name: 'Anastasiia',
     position: 'Developer',
-    gitHub: 'https://github.com/alex-postrik',
+    gitHub: 'https://github.com/nastyamara',
     previewImg: Oleksandr,
     svg: gitHub,
   },

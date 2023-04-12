@@ -1,10 +1,14 @@
 import moviesService from "./movies-service";
 
+
+
 let moviesInQueue = [];
-  
-export async function onAddQ(currentMovieId) {
+
 
   
+export async function onAddQ(currentMovieId) {
+const qBtn = document.querySelector(".btn-add-queue");
+  console.log(qBtn);
   const Q_KEY = 'movies in queue';
   const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
   console.log(currentMovieId);
@@ -17,6 +21,7 @@ export async function onAddQ(currentMovieId) {
     if (movieCheck === null) {
         moviesInQueue.push(movie);
       save(Q_KEY, moviesInQueue);
+      qBtn.textContent = 'remove from queque';
      
   }
     //якщо є дані - перевіряємо, чи є там айді фільму
@@ -28,6 +33,8 @@ export async function onAddQ(currentMovieId) {
           if (moviesInQueue.length === 1) {
             localStorage.removeItem(Q_KEY);
             moviesInQueue = [];
+             qBtn.textContent = 'add to queque';
+
         }
           else {
 
@@ -36,7 +43,8 @@ export async function onAddQ(currentMovieId) {
           console.log(indexM);
             queue.splice(indexM, 1);
             moviesInQueue = queue;
-          save(Q_KEY, queue);
+            save(Q_KEY, queue);
+            qBtn.textContent = 'add to queque';
         }
         
         }
@@ -44,6 +52,7 @@ export async function onAddQ(currentMovieId) {
             //якщо фільму немає, пушимо в масив та перезаписуємо
             moviesInQueue.push(movie);  
         save(Q_KEY, moviesInQueue);
+        qBtn.textContent = 'remove from queque';
         console.log(moviesInQueue.length);
       }
     }
