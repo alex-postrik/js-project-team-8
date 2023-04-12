@@ -113,15 +113,22 @@ async function renderMovie(currentMovieId) {
       
       
         refs.modalContainer.innerHTML = createMovieMarkup;
-        const qBtn = document.querySelector(".btn-add-queue");
-        // const wBtn = document.querySelector(".btn-add-watched");
-        qBtn.addEventListener('click', onAddQ(currentMovieId));
+    
 
         document.querySelector('.btn-modal-close-about-movie').addEventListener('click', onCloseModalAboutMovies);
+            const qBtn = document.querySelector(".btn-add-queue");
+  
+        // const wBtn = document.querySelector(".btn-add-watched");
+        qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
 
  
     } catch (error) {
         console.log(error);
     }
 }
+
+
+
+
+
 
