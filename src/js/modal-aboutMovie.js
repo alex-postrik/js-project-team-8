@@ -31,6 +31,7 @@ if (refs.openModal) {
             const currentMovieId = parent.dataset.movies;
     
             renderMovie(currentMovieId);
+        
         }
     }
 }
@@ -57,12 +58,15 @@ if (refs.openModal) {
 
 
 
-async function renderMovie(currentMovieId) {
+ async function renderMovie(currentMovieId) {
     try {
+        const Q_KEY = 'movies in queue';
+        const movieCheck = localStorage.getItem(Q_KEY);
         const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
         const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
-            <svg class="icon-close">
-                <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close" class="iconSVG-close"></use>
+            <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16">
+                <path d="M1 1L15 15" stroke="black" stroke-width="2"/>
+                <path d="M1 15L15 1" stroke="black" stroke-width="2"/>
             </svg>
         </button>
  <img src="${movie.posterPath}"
@@ -113,13 +117,24 @@ async function renderMovie(currentMovieId) {
       
       
         refs.modalContainer.innerHTML = createMovieMarkup;
+        const qBtn = document.querySelector(".btn-add-queue");
+        if (movieCheck) {
+            if (movieCheck.includes(currentMovieId))
+                qBtn.textContent = 'remove from queque';
+       }
+        qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
+        console.log(qBtn.textContent);
+
+            
+        
+       
     
 
         document.querySelector('.btn-modal-close-about-movie').addEventListener('click', onCloseModalAboutMovies);
-            const qBtn = document.querySelector(".btn-add-queue");
+     
   
         // const wBtn = document.querySelector(".btn-add-watched");
-        qBtn.addEventListener('click', ()=> onAddQ(currentMovieId));
+       
 
  
     } catch (error) {
