@@ -1,31 +1,12 @@
-// const spinner = document.querySelector('.spinner');
 
-// function showSpinner() {
-//   spinner.style.display = 'block';
-// }
 
-// function hiddenSpinner() {
-//   spinner.style.display = 'none';
-// }
 
-const refs = { loader: document.querySelector('.spinner') };
 
-function removeLoader() {
-  refs.loader.classList.add('loader-hidden');
+export function showSpinner() {
+  document.querySelector('.spinner').style.display = 'flex';
 }
 
-function addLoader() {
-  refs.loader.classList.remove('loader-hidden');
-  
+export function hiddenSpinner() {
+  document.querySelector('.spinner').style.display = 'none';
 }
 
-document.addEventListener('readystatechange', onPageLoadingSpinner);
-
-export default function onPageLoadingSpinner() {
-  const imgRef = document.querySelector('.movies__img');
-
-  addLoader();
-  if (document.readyState === 'complete') {
-    setTimeout(removeLoader, 1000);
-  }
-}
