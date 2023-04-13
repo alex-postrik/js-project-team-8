@@ -6,6 +6,9 @@ const searchListEl = document.querySelector('.lib__list');
 
 // import { createMovieCardMarkup } from './card.js';
 // import { renderPagination } from './pagination';
+
+const moviesListEl = document.querySelector('.movies__list');
+
 const moviesListEl = document.querySelector('.movies__list');
 
 // import { createMovieCardMarkup } from './card.js';

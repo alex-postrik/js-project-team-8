@@ -3,6 +3,11 @@
 
 import axios from 'axios';
 
+import { showSpinner } from './spinner.js';
+import { hiddenSpinner } from './spinner.js';
+
+hiddenSpinner();
+
 const API_KEY = 'de2f3a0c57a311cc48a85909660d7281';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const LOCKALSTORAGE_KEY = 'save-genres';
@@ -20,15 +25,25 @@ class MoviesServise {
 
   // Метод для запиту популярних фільмыів
   async fetchPopularMovies() {
+    showSpinner();
+
     const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`;
     const movies = await this.fetchMovie(url);
+
+    hiddenSpinner();
+
     return movies;
   }
 
   // Метод для пошуку по ключовому слову
   async fetchSearchMovies() {
+    showSpinner();
+
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${this.searchQuery}&page=${this.page}`;
     const movies = await this.fetchMovie(url);
+
+    hiddenSpinner();
+
     return movies;
   }
 
@@ -38,6 +53,8 @@ class MoviesServise {
     const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}`;
 
     try {
+      showSpinner();
+
       const response = await axios.get(url);
       const data = await response.data;
       console.log(response.data);
@@ -74,6 +91,9 @@ class MoviesServise {
         releaseDate: release_date.slice(0, 4),
       };
       console.log(movie);
+
+      hiddenSpinner();
+
       return movie;
     } catch (error) {
       console.error(error);
@@ -85,6 +105,8 @@ class MoviesServise {
     const url = `${BASE_URL}/movie/${this.movieId}/videos?api_key=${API_KEY}`;
 
     try {
+      showSpinner();
+
       const response = await axios.get(url);
       const data = await response.data;
       const video = await data.results[0];
@@ -93,6 +115,8 @@ class MoviesServise {
       const videoKey = {
         key,
       };
+
+      hiddenSpinner();
 
       return videoKey;
     } catch (error) {
@@ -117,6 +141,8 @@ class MoviesServise {
 
   async fetchMovie(url) {
     try {
+      showSpinner();
+
       const response = await axios.get(url);
       const data = await response.data;
       const moviesSort = await data.results;
@@ -147,6 +173,7 @@ class MoviesServise {
             const matchedGenre = parsedGetGenres.find(
               genre => genre.id === genreId
             );
+
             return matchedGenre.name;
           });
 
@@ -168,6 +195,8 @@ class MoviesServise {
           };
         });
         this.allPages = data.total_pages;
+
+        hiddenSpinner();
 
         return movies;
       }
