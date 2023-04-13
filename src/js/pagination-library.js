@@ -1263,15 +1263,14 @@ const galleryItems = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-// console.log(galleryItems);
 const KEY_TEST = 'test';
 
 const LIMIT = 20;
 const paginationLibraryRef = document.querySelector('.pagination');
-// let listRef = document.querySelectorAll('.pagination li');
+
 let itemsForRender = null;
 let dataArray = null;
-// Ці функції тимчасові save, save, const KEY_TEST = 'test';
+// Ці функції тимчасові save, save, const KEY_TEST = 'test'; const galleryItems
 const save = (key, galleryItems) => {
   try {
     const dataImg = JSON.stringify(galleryItems);
@@ -1419,6 +1418,7 @@ function onPaginationClick(evt) {
   console.log('из класса страница текущая', localStoragePagination.currentPage);
 }
 
+// let listRef = document.querySelectorAll('.pagination li');
 // listPage();
 // function listPage() {
 //   if (!dataArray || dataArray.length <= LIMIT) {
