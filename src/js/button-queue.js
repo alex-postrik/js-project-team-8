@@ -2,6 +2,9 @@
 // export let queueBtn = null;
 import nomovies from '../image/library-dek.jpg';
 
+let watchedMovies = [];
+let queueMovies = [];
+
 export function initButtons() {
   watchedBtn = document.querySelector('button[data-id="watched-btn"]');
   queueBtn = document.querySelector('button[data-id="queue-btn"]');
@@ -33,17 +36,18 @@ const refs = {
   btnQueue: document.querySelector('button[data-id="queue-btn"]'),
 };
 
-refs.btnQueue.addEventListener('click', renderMoviesQueue);
-refs.btnWatched.addEventListener('click', renderMoviesWatched);
+// refs.btnQueue.addEventListener('click', renderMoviesQueue);
+// refs.btnWatched.addEventListener('click', renderMoviesWatched);
 
 export function renderMoviesWatched() {
-  const watchedMovies = JSON.parse(localStorage.getItem('movies in watched'));
+  watchedMovies = JSON.parse(localStorage.getItem('movies in watched'));
 
   if (!watchedMovies || watchedMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
     return;
   }
   const markupWatched = watchedMovies
+    .slice(0, 20)
     .map(movie => {
       return `
 		<li class="movies__item" data-movies="${movie.id}">
@@ -60,8 +64,8 @@ export function renderMoviesWatched() {
   refs.moviesListEl.innerHTML = markupWatched;
 }
 
-export function renderMoviesQueue() {
-  const queueMovies = JSON.parse(localStorage.getItem('movies in queue'));
+export default function renderMoviesQueue() {
+ queueMovies = JSON.parse(localStorage.getItem('movies in queue'));
 
   if (!queueMovies || queueMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
@@ -69,6 +73,7 @@ export function renderMoviesQueue() {
   }
 
   const moviesHTML = queueMovies
+    .slice(0, 20)
     .map(movie => {
       return `
       <li class="movies__item" data-movies="${movie.id}">
