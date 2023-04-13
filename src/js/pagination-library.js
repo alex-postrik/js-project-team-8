@@ -1263,13 +1263,14 @@ const galleryItems = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-// console.log(galleryItems);
 const KEY_TEST = 'test';
+
 const LIMIT = 20;
 const paginationLibraryRef = document.querySelector('.pagination');
-let listRef = document.querySelectorAll('.pagination li');
-let itemsForRender = null;
 
+let itemsForRender = null;
+let dataArray = null;
+// Ці функції тимчасові save, save, const KEY_TEST = 'test'; const galleryItems
 const save = (key, galleryItems) => {
   try {
     const dataImg = JSON.stringify(galleryItems);
@@ -1279,13 +1280,10 @@ const save = (key, galleryItems) => {
   }
 };
 save(KEY_TEST, galleryItems);
-
-// let lastPages = null;
-let dataArray = null;
-// let currentPage = 1;
+// Мені потрібен масив об'єктів, який буде зберігатися в dataArray,
 const load = key => {
   try {
-    arrayFromLocalStorage = localStorage.getItem(key);
+    const arrayFromLocalStorage = localStorage.getItem(key);
     return arrayFromLocalStorage === null
       ? undefined
       : (dataArray = JSON.parse(arrayFromLocalStorage));
@@ -1298,7 +1296,7 @@ load(KEY_TEST);
 class LocalStoragePagination {
   constructor() {
     this.lastPages = null;
-    this.dataArray = [];
+    // this.dataArray = [];
     this.currentPage = 1;
     // this.galleryItems = null;
   }
@@ -1332,7 +1330,7 @@ function сutItems() {
   console.log('cut items', itemsForRender);
 }
 renderPagination();
-// listPage();
+
 function renderPagination() {
   let markup = '';
   localStoragePagination.lastPages = Math.ceil(dataArray.length / LIMIT);
@@ -1397,6 +1395,31 @@ function renderPagination() {
   paginationLibraryRef.innerHTML = markup;
 }
 
+paginationLibraryRef.addEventListener('click', onPaginationClick);
+
+function onPaginationClick(evt) {
+  console.log(evt.target.textContent);
+
+  if (evt.target.textContent === '...') return;
+  if (evt.target.classList.contains('arrow-right')) {
+    localStoragePagination.incrementPage();
+  }
+  if (evt.target.classList.contains('arrow-left')) {
+    localStoragePagination.decrementPage();
+  }
+  if (Number(evt.target.textContent)) {
+    localStoragePagination.currentPage = Number(evt.target.textContent);
+    // evt.target.classList.add('pagination__button-current');
+  }
+  // listPage();
+  сutItems();
+  renderPagination();
+  // scrollToTop();
+  console.log('из класса страница текущая', localStoragePagination.currentPage);
+}
+
+// let listRef = document.querySelectorAll('.pagination li');
+// listPage();
 // function listPage() {
 //   if (!dataArray || dataArray.length <= LIMIT) {
 //     return;
@@ -1520,32 +1543,7 @@ function renderPagination() {
 //   // check();
 // }
 
-paginationLibraryRef.addEventListener('click', onPaginationClick);
-
-function onPaginationClick(evt) {
-  evt.preventDefault();
-
-  console.log(evt.target.textContent);
-
-  if (evt.target.textContent === '...') return;
-  if (evt.target.classList.contains('arrow-right')) {
-    localStoragePagination.incrementPage();
-  }
-  if (evt.target.classList.contains('arrow-left')) {
-    localStoragePagination.decrementPage();
-  }
-  if (Number(evt.target.textContent)) {
-    localStoragePagination.currentPage = Number(evt.target.textContent);
-    // evt.target.classList.add('pagination__button-current');
-  }
-  // listPage();
-  сutItems();
-  renderPagination();
-  // scrollToTop();
-  console.log('из класса страница текущая', localStoragePagination.currentPage);
-}
-
-const rightPointsRef = document.querySelector('.pagination__points_right');
+// const rightPointsRef = document.querySelector('.pagination__points_right');
 
 // function check() {
 //   if (localStoragePagination.currentPage === localStoragePagination.lastPages) {
