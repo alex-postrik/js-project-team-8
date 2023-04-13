@@ -5,7 +5,7 @@ import { trailerWatched } from './trailer';
 
 import { onAddW } from './addToWatched';
 
-
+import imageNoMovie from '../image/img_modal-aboutMovie/No-Image-Placeholder.jpg'
 
 
 const KEY_CODE_ESC = "Escape";
@@ -75,6 +75,12 @@ if (refs.openModal) {
         const W_KEY = 'movies in watched';
         const movieChecked = localStorage.getItem(W_KEY);
         const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
+
+        console.log('movie',movie)
+        if (movie.posterPath === "https://image.tmdb.org/t/p/w500null") {
+            movie.posterPath = imageNoMovie;
+         }
+
         const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
             <svg class="icon-close" width="14" height="14" viewBox="0 0 16 16">
                 <path d="M1 1L15 15" stroke="black" stroke-width="2"/>
