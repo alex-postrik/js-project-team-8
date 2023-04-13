@@ -124,7 +124,8 @@ if (refs.openModal) {
                 <button class="btn-add-watched" type="button">add to Watched</button>
                 <button class="btn-add-queue" type="button">add to queue</button>
             </div>
-            <button class="movies__trailer" type="button">Trailer</button>
+            <div class="container-trailer-btn"><button class="movies__trailer" type="button">Trailer</button></div>
+            
         </div>
 `;
       
