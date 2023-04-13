@@ -17,7 +17,7 @@ export let param = 1;
 
 //testPaginetion();
 
-const paginationRef = document.querySelector('.pagination');
+export const paginationRef = document.querySelector('.pagination');
 
 paginationRef.addEventListener('click', onPaginationClick);
 
