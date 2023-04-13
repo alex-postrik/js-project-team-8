@@ -23,7 +23,11 @@ export function createMovieCardMarkup(movies) {
   const movieCardMarkup = movies
     .map(({ posterPath, title, genreIds, releaseDate, id }) => {
       let poster = posterPath;
-      if (posterPath === 'https://image.tmdb.org/t/p/w500null') {
+      if (
+        posterPath === 'https://image.tmdb.org/t/p/w500null' ||
+        posterPath ===
+          'https://image.tmdb.org/t/p/w500/mNSqObjKszcxr55buQafQF9ARiC.jpg'
+      ) {
         poster = noimage;
       }
       let genre = genreIds;
