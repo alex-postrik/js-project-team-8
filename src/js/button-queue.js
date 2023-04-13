@@ -2,6 +2,7 @@
 // export let queueBtn = null;
 // import { getDataLocalStorage } from './pagination-library';
 import nomovies from '../image/library-dek.jpg';
+import noimage from '../image/No-Image-Placeholder.jpg';
 // import { localStoragePagination } from './pagination-library';
 // import { renderPagination } from './pagination-library';
 let AllMovies = [];

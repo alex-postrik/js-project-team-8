@@ -1,4 +1,5 @@
 // import { renderMoviesQueueNextPage } from 'module';
+import noimage from '../image/No-Image-Placeholder.jpg';
 const KEY_WATCHED = 'movies in watched';
 const KEY_QUEUE = 'movies in queue';
 const LIMIT = 20;
@@ -193,15 +194,23 @@ function renderMoviesQueueNextPage(itemsForRender) {
   const moviesListElRef = document.querySelector('.movies__list');
   const moviesHTML = itemsForRender
     .map(movie => {
+      let poster = movie.posterPath;
+      if (
+        movie.posterPath === 'https://image.tmdb.org/t/p/w500null' ||
+        movie.posterPath ===
+          'https://image.tmdb.org/t/p/w500/mNSqObjKszcxr55buQafQF9ARiC.jpg'
+      ) {
+        poster = noimage;
+      }
       return `
-      <li class="movies__item" data-movies="${movie.id}">
-        <div class="movies__thumb">
-        <img class="movies__img" src="${movie.posterPath}" alt="${movie.title}"/>
-        </div>
-        <p class="movies__title">${movie.title}</p>
-        <p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
-      </li>
-    `;
+		<li class="movies__item" data-movies="${movie.id}">
+			<div class="movies__thumb">
+			<img class="movies__img" src="${poster}" alt="${movie.title}"/>
+			</div>
+			<p class="movies__title">${movie.title}</p>
+			<p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
+		</li>
+	`;
     })
     .join('');
 
