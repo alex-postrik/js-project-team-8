@@ -1,11 +1,11 @@
 // export let watchedBtn = 0;
 // export let queueBtn = null;
+import { getDataLocalStorage } from './pagination-library';
 import nomovies from '../image/library-dek.jpg';
-
+import { localStoragePagination } from './pagination-library';
+import { renderPagination } from './pagination-library';
 let AllMovies = [];
 // let queueMovies = [];
-
-
 
 export function initButtons() {
   watchedBtn = document.querySelector('button[data-id="watched-btn"]');
@@ -16,12 +16,19 @@ export function initButtons() {
       watchedBtn.classList.add('header-movie-btn--active');
       queueBtn.classList.remove('header-movie-btn--active');
       renderMoviesWatched();
+      localStoragePagination.resetPage();
+      getDataLocalStorage();
+      renderPagination();
     });
 
     queueBtn.addEventListener('click', () => {
       queueBtn.classList.add('header-movie-btn--active');
       watchedBtn.classList.remove('header-movie-btn--active');
       renderMoviesQueue();
+      localStoragePagination.resetPage();
+      getDataLocalStorage();
+      renderPagination();
+      console.log('hello  с моего скрипта');
     });
   }
   // watchedBtn.classList.add('header-movie-btn--active');
@@ -38,8 +45,6 @@ const refs = {
   btnQueue: document.querySelector('button[data-id="queue-btn"]'),
 };
 
-
-
 export function renderMoviesWatched() {
   AllMovies = JSON.parse(localStorage.getItem('movies in watched'));
 
@@ -47,8 +52,7 @@ export function renderMoviesWatched() {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
     return;
   }
-  const markupWatched = AllMovies
-    .slice(0, 20)
+  const markupWatched = AllMovies.slice(0, 20)
     .map(movie => {
       return `
 		<li class="movies__item" data-movies="${movie.id}">
@@ -67,15 +71,14 @@ export function renderMoviesWatched() {
 }
 
 export function renderMoviesQueue() {
- AllMovies = JSON.parse(localStorage.getItem('movies in queue'));
+  AllMovies = JSON.parse(localStorage.getItem('movies in queue'));
 
   if (!AllMovies || AllMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
     return;
   }
 
-  const moviesHTML = AllMovies
-    .slice(0, 20)
+  const moviesHTML = AllMovies.slice(0, 20)
     .map(movie => {
       return `
       <li class="movies__item" data-movies="${movie.id}">
@@ -99,5 +102,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+export function renderMoviesQueueNextPage(itemsForRender) {
+  const moviesHTML = itemsForRender
+    .map(movie => {
+      return `
+      <li class="movies__item" data-movies="${movie.id}">
+        <div class="movies__thumb">
+        <img class="movies__img" src="${movie.posterPath}" alt="${movie.title}"/>
+        </div>
+        <p class="movies__title">${movie.title}</p>
+        <p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
+      </li>
+    `;
+    })
+    .join('');
 
-
+  refs.moviesListEl.innerHTML = moviesHTML;
+}
