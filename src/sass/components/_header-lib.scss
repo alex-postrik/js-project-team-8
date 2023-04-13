@@ -9,21 +9,19 @@
   flex-wrap: wrap;
   gap: 4px;
 
-  @media screen and (min-width: 767px) {
-  }
   @media screen and (min-width: 768px) {
     position: absolute;
-
     right: 20px;
-    top: 14px;
+    top: 16px;
   }
   @media screen and (min-width: 1280px) {
-    .header-movi-btn:hover {
-      gap: 8px;
-      right: 32px;
-      justify-content: baseline;
-      top: 16px;
-    }
+    right: 32px;
+    top: 16px;
+    gap: 8px;
+    justify-content: baseline;
+    // .header-movi-btn:hover {
+    //   top: 16px;
+    // }
   }
 }
 
@@ -43,6 +41,11 @@
     color 0.25s;
   transform: translateY(0);
   box-shadow: none;
+  &:hover,
+  &:focus {
+    background-color: var(--secondary-text-color);
+    color: var(--akcent-text-color);
+  }
 
   @media screen and (min-width: 768px) {
     padding: 12px 24px;

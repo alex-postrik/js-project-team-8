@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
+    <link rel="shortcut icon" href="./image/user-image/clapperboard-2.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,24 +14,21 @@
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials -->
-    <include src=""></include>
+       <!-- ❗️❗️❗️ HEADER -->
+       <include src="./partials/_header-main.html"></include>
+       <!-- ❗️❗️❗️  MAIN -->
     <main>
-      <!-- ❗️❗️❗️ Add partials -->
-      <include src="./partials/_header-main.html"></include>
-      <include src="./partials/main.html"></include> 
-      <include src="./partials/add-to-watched.html"></include>
-      <include src="./partials/paginatiion.html"></include>
-      <include src="./partials/scroll.html"></include>
+        <include src="./partials/main.html"></include> 
+        <include src="./partials/add-to-watched.html"></include>
+        <include src="./partials/paginatiion.html"></include>
+        <include src="./partials/scroll.html"></include>
     </main>
-    <include src="./partials/spinner.html"></include>
+       <!-- ❗️❗️❗️  FOOTER -->
     <include src="./partials/_footer.html"></include>
-
-    <!-- ❗️❗️❗️ scrript -->
+       <!-- ❗️❗️❗️  MODAL/SPINER --> 
     <include src="./partials/modal-aboutMovie.html"></include>
-
-
+    <include src="./partials/spinner.html"></include>
+       <!-- ❗️❗️❗️ scrript -->
     <script src="./index.js" type="module"></script>
-
   </body>
 </html>

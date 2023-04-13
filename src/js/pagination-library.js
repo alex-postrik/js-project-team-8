@@ -662,6 +662,314 @@ const galleryItems = [
   },
   {
     preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
       'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
     original:
       'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
@@ -828,14 +1136,141 @@ const galleryItems = [
       'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
     description: 'Lighthouse Coast Sea',
   },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
 ];
-// console.log(galleryItems);
 const KEY_TEST = 'test';
+
 const LIMIT = 20;
 const paginationLibraryRef = document.querySelector('.pagination');
-let listRef = document.querySelectorAll('.pagination li');
-let itemsForRender = null;
 
+let itemsForRender = null;
+let dataArray = null;
+// Ці функції тимчасові save, save, const KEY_TEST = 'test'; const galleryItems
 const save = (key, galleryItems) => {
   try {
     const dataImg = JSON.stringify(galleryItems);
@@ -845,13 +1280,10 @@ const save = (key, galleryItems) => {
   }
 };
 save(KEY_TEST, galleryItems);
-
-let lastPages = null;
-let dataArray = null;
-let currentPage = 1;
+// Мені потрібен масив об'єктів, який буде зберігатися в dataArray,
 const load = key => {
   try {
-    arrayFromLocalStorage = localStorage.getItem(key);
+    const arrayFromLocalStorage = localStorage.getItem(key);
     return arrayFromLocalStorage === null
       ? undefined
       : (dataArray = JSON.parse(arrayFromLocalStorage));
@@ -864,13 +1296,16 @@ load(KEY_TEST);
 class LocalStoragePagination {
   constructor() {
     this.lastPages = null;
-    this.dataArray = [];
+    // this.dataArray = [];
     this.currentPage = 1;
     // this.galleryItems = null;
   }
 
   getcurrentPage() {
     return this.currentPage;
+  }
+  getlastPages() {
+    return this.lastPages;
   }
 
   incrementPage() {
@@ -885,72 +1320,84 @@ class LocalStoragePagination {
 }
 const localStoragePagination = new LocalStoragePagination();
 
-// вьетнам
 сutItems();
 
 function сutItems() {
   let beginGet = LIMIT * (localStoragePagination.currentPage - 1);
-  // let endGet = LIMIT * localStoragePagination.currentPage - 1;
   let endGet = LIMIT + beginGet;
 
   let itemsForRender = dataArray.slice(beginGet, endGet);
   console.log('cut items', itemsForRender);
-  //   listRef.forEach((item, key) => {
-  //     if (key >= beginGet && key <= endGet) {
-  //     }
-  //   });
 }
+renderPagination();
 
-listPage();
-function listPage() {
-  if (!dataArray || dataArray.length <= LIMIT) {
+function renderPagination() {
+  let markup = '';
+  localStoragePagination.lastPages = Math.ceil(dataArray.length / LIMIT);
+  if (
+    !localStoragePagination.currentPage ||
+    localStoragePagination.currentPage > localStoragePagination.lastPages
+  )
     return;
-  }
-  lastPages = Math.ceil(dataArray.length / LIMIT);
 
-  // if (lastPages <= 7) {
-
-  // } else {
-  // }
-  paginationLibraryRef.innerHTML = '';
-
-  for (let index = 1; index <= lastPages; index++) {
-    let newPage = document.createElement('li');
-    newPage.innerText = index;
-    newPage.classList.add('pagination__button');
-    if (index === localStoragePagination.currentPage) {
-      newPage.classList.add('pagination__button-current');
-    }
-    // newPage.setAttribute('onclick', 'changePage(' + index + ')');
-    paginationLibraryRef.appendChild(newPage);
-  }
-  // if (localStoragePagination.currentPage > 1) {
-  const arrow_right = `<li class="pagination__arrow-right arrow-right scroll-top"><svg class="arrow-right" width="16" height="16" viewBox="0 0 16 16" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.33335 8H12.6667" stroke="black" stroke-width="1.33333" stroke-linecap="round"
-          stroke-linejoin="round" />
-        <path d="M8.00002 12.6666L12.6667 7.99998L8.00002 3.33331" stroke="black" stroke-width="1.33333"
-          stroke-linecap="round" stroke-linejoin="round" />
-      </svg></li>`;
-  paginationLibraryRef.insertAdjacentHTML('beforeend', arrow_right);
-
-  if (localStoragePagination.currentPage > 1) {
-    const arrow_left = `<li class="pagination__arrow-left arrow-left"><svg class="arrow-left" width="16" height="16" viewBox="0 0 16 16" fill="none"
+  if (localStoragePagination.currentPage > 1)
+    markup += `<li class="pagination__arrow-left arrow-left"><svg class="arrow-left" width="16" height="16" viewBox="0 0 16 16" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M12.6666 8H3.33331" stroke="black" stroke-width="1.33333" stroke-linecap="round"
           stroke-linejoin="round" />
         <path d="M7.99998 12.6666L3.33331 7.99998L7.99998 3.33331" stroke="black" stroke-width="1.33333"
           stroke-linecap="round" stroke-linejoin="round" />
       </svg></li>`;
-    paginationLibraryRef.insertAdjacentHTML('afterbegin', arrow_left);
-  }
+
+  if (localStoragePagination.currentPage > 1)
+    markup += `<li class="pagination__button pagination__button-end">1</li>`;
+
+  if (localStoragePagination.currentPage > 4)
+    markup += `<li class="pagination__points">...</li>`;
+
+  if (localStoragePagination.currentPage > 3)
+    markup += `<li class="pagination__button">${
+      localStoragePagination.currentPage - 2
+    }</li>`;
+
+  if (localStoragePagination.currentPage > 2)
+    markup += `<li class="pagination__button">${
+      localStoragePagination.currentPage - 1
+    }</li>`;
+
+  markup += `<li class="pagination__button pagination__button-current">${localStoragePagination.currentPage}</li>`;
+
+  if (localStoragePagination.currentPage + 1 < localStoragePagination.lastPages)
+    markup += `<li class="pagination__button">${
+      localStoragePagination.currentPage + 1
+    }</li>`;
+
+  if (localStoragePagination.currentPage + 2 < localStoragePagination.lastPages)
+    markup += `<li class="pagination__button">${
+      localStoragePagination.currentPage + 2
+    }</li>`;
+
+  if (localStoragePagination.currentPage + 4 < localStoragePagination.lastPages)
+    markup += `<li class="pagination__points">...</li>`;
+
+  if (localStoragePagination.currentPage < localStoragePagination.lastPages)
+    markup += `<li class="pagination__button pagination__button-end">${localStoragePagination.lastPages}</li>`;
+
+  if (localStoragePagination.currentPage < localStoragePagination.lastPages)
+    markup += `<li class="pagination__arrow-right arrow-right scroll-top"><svg class="arrow-right" width="16" height="16" viewBox="0 0 16 16" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.33335 8H12.6667" stroke="black" stroke-width="1.33333" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M8.00002 12.6666L12.6667 7.99998L8.00002 3.33331" stroke="black" stroke-width="1.33333"
+          stroke-linecap="round" stroke-linejoin="round" />
+      </svg></li>`;
+
+  paginationLibraryRef.innerHTML = markup;
 }
 
 paginationLibraryRef.addEventListener('click', onPaginationClick);
 
 function onPaginationClick(evt) {
-  evt.preventDefault();
-
   console.log(evt.target.textContent);
 
   if (evt.target.textContent === '...') return;
@@ -962,12 +1409,160 @@ function onPaginationClick(evt) {
   }
   if (Number(evt.target.textContent)) {
     localStoragePagination.currentPage = Number(evt.target.textContent);
+    // evt.target.classList.add('pagination__button-current');
   }
-  listPage();
+  // listPage();
   сutItems();
+  renderPagination();
+  // scrollToTop();
   console.log('из класса страница текущая', localStoragePagination.currentPage);
 }
 
+// let listRef = document.querySelectorAll('.pagination li');
+// listPage();
+// function listPage() {
+//   if (!dataArray || dataArray.length <= LIMIT) {
+//     return;
+//   }
+//   localStoragePagination.lastPages = Math.ceil(dataArray.length / LIMIT);
+//   console.log(localStoragePagination.getlastPages());
+//   paginationLibraryRef.innerHTML = '';
+
+//   // if (
+//   //   localStoragePagination.currentPage >= 5 &&
+//   //   localStoragePagination.lastPages > 8
+//   // ) {
+//   //   const markupWithPoints = `<li class="pagination__arrow-left arrow-left"><svg class="arrow-left" width="16" height="16" viewBox="0 0 16 16" fill="none"
+//   //       xmlns="http://www.w3.org/2000/svg">
+//   //       <path d="M12.6666 8H3.33331" stroke="black" stroke-width="1.33333" stroke-linecap="round"
+//   //         stroke-linejoin="round" />
+//   //       <path d="M7.99998 12.6666L3.33331 7.99998L7.99998 3.33331" stroke="black" stroke-width="1.33333"
+//   //         stroke-linecap="round" stroke-linejoin="round" />
+//   //     </svg></li>
+//   //     <li class="pagination__button pagination__button-end">1</li>
+//   //     <li class="pagination__points">...</li>
+//   //     <li class="pagination__button">${
+//   //       localStoragePagination.currentPage - 2
+//   //     }</li>
+//   //     <li class="pagination__button">${
+//   //       localStoragePagination.currentPage - 1
+//   //     }</li>
+//   //     <li class="pagination__button pagination__button-current">${
+//   //       localStoragePagination.currentPage
+//   //     }</li>
+//   //      <li class="pagination__button">${
+//   //        localStoragePagination.currentPage + 1
+//   //      }</li>
+//   //     <li class="pagination__button">${
+//   //       localStoragePagination.currentPage + 2
+//   //     }</li>
+
+//   //     `;
+
+//   //   paginationLibraryRef.innerHTML = markupWithPoints;
+//   //   if (
+//   //     localStoragePagination.currentPage + 2 <
+//   //     localStoragePagination.lastPages
+//   //   ) {
+//   //     const additionalMarkup = `<li class="pagination__points pagination__points__right">...</li>
+//   //     <li class="pagination__button pagination__button-end">${localStoragePagination.lastPages}</li>
+//   //       <li class="pagination__arrow-right arrow-right scroll-top"><svg class="arrow-right" width="16" height="16" viewBox="0 0 16 16" fill="none"
+//   //       xmlns="http://www.w3.org/2000/svg">
+//   //       <path d="M3.33335 8H12.6667" stroke="black" stroke-width="1.33333" stroke-linecap="round"
+//   //         stroke-linejoin="round" />
+//   //       <path d="M8.00002 12.6666L12.6667 7.99998L8.00002 3.33331" stroke="black" stroke-width="1.33333"
+//   //         stroke-linecap="round" stroke-linejoin="round" />
+//   //     </svg></li>`;
+//   //     paginationLibraryRef.insertAdjacentHTML('beforeend', additionalMarkup);
+//   //   }
+//   //   // check();
+//   //   return;
+//   // }
+//   // function createArrayPages(lastPages) {
+//   //   let arrayAllPages = [];
+//   //   for (let i = lastPages; i > 0; i -= 1) {
+//   //     arrayAllPages.unshift(i);
+//   //   }
+//   //   console.log(arrayAllPages);
+//   //   listPage(lastPages);
+//   //   // createMarkupFirst(arrayAllPages);
+//   // }
+//   // if (localStoragePagination.lastPages <= 8) {
+//   let numberLastPageInMarkup = localStoragePagination.lastPages;
+//   if (localStoragePagination.lastPages >= 8) {
+//     numberLastPageInMarkup = 8;
+//   }
+//   for (let index = 1; index <= numberLastPageInMarkup; index++) {
+//     let newPage = document.createElement('li');
+//     newPage.innerText = index;
+//     newPage.classList.add('pagination__button');
+//     if (index === localStoragePagination.currentPage) {
+//       newPage.classList.add('pagination__button-current');
+//     }
+//     paginationLibraryRef.appendChild(newPage);
+//     // newPage.setAttribute('onclick', 'changePage(' + index + ')');
+//   }
+//   if (localStoragePagination.lastPages > 8) {
+//     paginationLibraryRef.insertAdjacentHTML(
+//       'beforeend',
+//       `<li class="pagination__points">...</li>
+//     <li class="pagination__button pagination__button-end">${localStoragePagination.lastPages}</li>`
+//     );
+//   }
+//   if (localStoragePagination.currentPage !== localStoragePagination.lastPages) {
+//     const arrow_right = `<li class="pagination__arrow-right arrow-right scroll-top"><svg class="arrow-right" width="16" height="16" viewBox="0 0 16 16" fill="none"
+//         xmlns="http://www.w3.org/2000/svg">
+//         <path d="M3.33335 8H12.6667" stroke="black" stroke-width="1.33333" stroke-linecap="round"
+//           stroke-linejoin="round" />
+//         <path d="M8.00002 12.6666L12.6667 7.99998L8.00002 3.33331" stroke="black" stroke-width="1.33333"
+//           stroke-linecap="round" stroke-linejoin="round" />
+//       </svg></li>`;
+//     paginationLibraryRef.insertAdjacentHTML('beforeend', arrow_right);
+//   }
+//   if (localStoragePagination.currentPage > 1) {
+//     const arrow_left = `<li class="pagination__arrow-left arrow-left"><svg class="arrow-left" width="16" height="16" viewBox="0 0 16 16" fill="none"
+//         xmlns="http://www.w3.org/2000/svg">
+//         <path d="M12.6666 8H3.33331" stroke="black" stroke-width="1.33333" stroke-linecap="round"
+//           stroke-linejoin="round" />
+//         <path d="M7.99998 12.6666L3.33331 7.99998L7.99998 3.33331" stroke="black" stroke-width="1.33333"
+//           stroke-linecap="round" stroke-linejoin="round" />
+//       </svg></li>`;
+//     paginationLibraryRef.insertAdjacentHTML('afterbegin', arrow_left);
+//   }
+//   // }
+
+//   // !!!!!!!!!!!!
+//   // if (
+//   //   localStoragePagination.lastPages <= 8 &&
+//   //   localStoragePagination.currentPage <= 4
+//   // ) {
+//   //   const points = `<li class="pagination__points">...</li>`;
+//   //   paginationLibraryRef.insertAdjacentHTML('beforeend', points);
+//   // }
+
+//   // check();
+// }
+
+// const rightPointsRef = document.querySelector('.pagination__points_right');
+
+// function check() {
+//   if (localStoragePagination.currentPage === localStoragePagination.lastPages) {
+//     const arrowRightRef = document.querySelector(
+//       '.pagination .pagination__arrow-right'
+//     );
+//     arrowRightRef.style.display = 'none';
+//   }
+// if (
+//   localStoragePagination.currentPage + 4 <
+//   localStoragePagination.lastPages
+// ) {
+//   const rightPointsRef = document.querySelector('.pagination__points_right');
+//   rightPointsRef.style.display = 'none';
+// }
+// }
+// function scrollToTop() {
+//   window.scrollTo(0, 0);
+// }
 // console.log(localStoragePagination.getcurrentPage());
 // console.log('из класса страница', localStoragePagination.currentPage);
 // function changePage(page) {

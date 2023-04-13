@@ -5,14 +5,12 @@
 @import './base/reset';
 @import './base/vars';
 
-
 @import './spinner';
 
 @import './pagination';
 
 // @import '~node_modules/modern-normalize/modern-normalize.css';
 // components
-
 
 @import './components/header-main';
 
@@ -24,13 +22,12 @@
 
 @import './components/container-lib';
 
-
 @import './components/modal-aboutMovie';
 
-
 @import './components/scroll';
-
 
 @import './components/footer';
 
 @import './components/modal-team.scss';
+@import './components/darck-tem';
+@import './components/watched-queue-btn';
