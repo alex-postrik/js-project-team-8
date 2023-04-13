@@ -7,6 +7,8 @@ import { onAddW } from './addToWatched';
 
 import imageNoMovie from '../image/img_modal-aboutMovie/No-Image-Placeholder.jpg'
 
+import { renderMoviesQueue } from './button-queue';
+import { renderMoviesWatched } from './button-queue';
 
 const KEY_CODE_ESC = "Escape";
 
@@ -50,8 +52,17 @@ if (refs.openModal) {
         document.body.classList.remove("show-modal-about-movie");
         // refs.closeBtn.removeEventListener('click', onCloseModalAboutMovies);
         refs.backdrop.removeEventListener('click', onCloseModalAboutMoviesClickBackdrop);
-        window.removeEventListener('keydown', onCloseKeyEscPress);
+        window.removeEventListener('keydown', onCloseKeyEscPress);        
+    if (window.location.href.indexOf('library.html') > -1) {
+    // пользователь находится на странице library.html
+    if (queueBtn.classList.contains('header-movie-btn--active')) {
+      renderMoviesQueue();
+    } else if (watchedBtn.classList.contains('header-movie-btn--active')) {
+        renderMoviesWatched();
+        console.log('safasf');
     }
+  }
+}
 
     function onCloseModalAboutMoviesClickBackdrop(e) {
         if (e.currentTarget === e.target) {

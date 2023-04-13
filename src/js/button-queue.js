@@ -54,10 +54,18 @@ export function renderMoviesWatched() {
   }
   const markupWatched = AllMovies.slice(0, 20)
     .map(movie => {
+      let poster = movie.posterPath;
+      if (
+        movie.posterPath === 'https://image.tmdb.org/t/p/w500null' ||
+        movie.posterPath ===
+          'https://image.tmdb.org/t/p/w500/mNSqObjKszcxr55buQafQF9ARiC.jpg'
+      ) {
+        poster = noimage;
+      }
       return `
 		<li class="movies__item" data-movies="${movie.id}">
 			<div class="movies__thumb">
-			<img class="movies__img" src="${movie.posterPath}" alt="${movie.title}"/>
+			<img class="movies__img" src="${poster}" alt="${movie.title}"/>
 			</div>
 			<p class="movies__title">${movie.title}</p>
 			<p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
@@ -80,10 +88,18 @@ export function renderMoviesQueue() {
 
   const moviesHTML = AllMovies.slice(0, 20)
     .map(movie => {
+      let poster = movie.posterPath;
+      if (
+        movie.posterPath === 'https://image.tmdb.org/t/p/w500null' ||
+        movie.posterPath ===
+          'https://image.tmdb.org/t/p/w500/mNSqObjKszcxr55buQafQF9ARiC.jpg'
+      ) {
+        poster = noimage;
+      }
       return `
       <li class="movies__item" data-movies="${movie.id}">
         <div class="movies__thumb">
-        <img class="movies__img" src="${movie.posterPath}" alt="${movie.title}"/>
+        <img class="movies__img" src="${poster}" alt="${movie.title}"/>
         </div>
         <p class="movies__title">${movie.title}</p>
         <p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
@@ -101,21 +117,3 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMoviesWatched();
   }
 });
-
-export function renderMoviesQueueNextPage(itemsForRender) {
-  const moviesHTML = itemsForRender
-    .map(movie => {
-      return `
-      <li class="movies__item" data-movies="${movie.id}">
-        <div class="movies__thumb">
-        <img class="movies__img" src="${movie.posterPath}" alt="${movie.title}"/>
-        </div>
-        <p class="movies__title">${movie.title}</p>
-        <p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
-      </li>
-    `;
-    })
-    .join('');
-
-  refs.moviesListEl.innerHTML = moviesHTML;
-}
