@@ -1,11 +1,9 @@
 // export let watchedBtn = 0;
 // export let queueBtn = null;
 import nomovies from '../image/library-dek.jpg';
+import noimage from '../image/No-Image-Placeholder.jpg';
 
 let AllMovies = [];
-// let queueMovies = [];
-
-
 
 export function initButtons() {
   watchedBtn = document.querySelector('button[data-id="watched-btn"]');
@@ -38,8 +36,6 @@ const refs = {
   btnQueue: document.querySelector('button[data-id="queue-btn"]'),
 };
 
-
-
 export function renderMoviesWatched() {
   AllMovies = JSON.parse(localStorage.getItem('movies in watched'));
 
@@ -47,13 +43,20 @@ export function renderMoviesWatched() {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
     return;
   }
-  const markupWatched = AllMovies
-    .slice(0, 20)
+  const markupWatched = AllMovies.slice(0, 20)
     .map(movie => {
+      let poster = movie.posterPath;
+      if (
+        movie.posterPath === 'https://image.tmdb.org/t/p/w500null' ||
+        movie.posterPath ===
+          'https://image.tmdb.org/t/p/w500/mNSqObjKszcxr55buQafQF9ARiC.jpg'
+      ) {
+        poster = noimage;
+      }
       return `
 		<li class="movies__item" data-movies="${movie.id}">
 			<div class="movies__thumb">
-			<img class="movies__img" src="${movie.posterPath}" alt="${movie.title}"/>
+			<img class="movies__img" src="${poster}" alt="${movie.title}"/>
 			</div>
 			<p class="movies__title">${movie.title}</p>
 			<p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
@@ -67,20 +70,27 @@ export function renderMoviesWatched() {
 }
 
 export function renderMoviesQueue() {
- AllMovies = JSON.parse(localStorage.getItem('movies in queue'));
+  AllMovies = JSON.parse(localStorage.getItem('movies in queue'));
 
   if (!AllMovies || AllMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
     return;
   }
 
-  const moviesHTML = AllMovies
-    .slice(0, 20)
+  const moviesHTML = AllMovies.slice(0, 20)
     .map(movie => {
+      let poster = movie.posterPath;
+      if (
+        movie.posterPath === 'https://image.tmdb.org/t/p/w500null' ||
+        movie.posterPath ===
+          'https://image.tmdb.org/t/p/w500/mNSqObjKszcxr55buQafQF9ARiC.jpg'
+      ) {
+        poster = noimage;
+      }
       return `
       <li class="movies__item" data-movies="${movie.id}">
         <div class="movies__thumb">
-        <img class="movies__img" src="${movie.posterPath}" alt="${movie.title}"/>
+        <img class="movies__img" src="${poster}" alt="${movie.title}"/>
         </div>
         <p class="movies__title">${movie.title}</p>
         <p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
@@ -98,6 +108,3 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMoviesWatched();
   }
 });
-
-
-
