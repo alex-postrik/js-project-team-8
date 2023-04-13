@@ -1,9 +1,9 @@
 // export let watchedBtn = 0;
 // export let queueBtn = null;
-import { getDataLocalStorage } from './pagination-library';
+// import { getDataLocalStorage } from './pagination-library';
 import nomovies from '../image/library-dek.jpg';
-import { localStoragePagination } from './pagination-library';
-import { renderPagination } from './pagination-library';
+// import { localStoragePagination } from './pagination-library';
+// import { renderPagination } from './pagination-library';
 let AllMovies = [];
 // let queueMovies = [];
 
@@ -16,19 +16,19 @@ export function initButtons() {
       watchedBtn.classList.add('header-movie-btn--active');
       queueBtn.classList.remove('header-movie-btn--active');
       renderMoviesWatched();
-      localStoragePagination.resetPage();
-      getDataLocalStorage();
-      renderPagination();
+      // localStoragePagination.resetPage();
+      // getDataLocalStorage();
+      // renderPagination();
     });
 
     queueBtn.addEventListener('click', () => {
       queueBtn.classList.add('header-movie-btn--active');
       watchedBtn.classList.remove('header-movie-btn--active');
       renderMoviesQueue();
-      localStoragePagination.resetPage();
-      getDataLocalStorage();
-      renderPagination();
-      console.log('hello  с моего скрипта');
+      // localStoragePagination.resetPage();
+      // getDataLocalStorage();
+      // renderPagination();
+      // console.log('hello  с моего скрипта');
     });
   }
   // watchedBtn.classList.add('header-movie-btn--active');

@@ -8,6 +8,11 @@ let dataArray = [];
 const paginationLibraryRef = document.querySelector('.pagination');
 
 // window.addEventListener('load', initButtons);
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.includes('library.html')) {
+    initButton();
+  }
+});
 
 const load = key => {
   try {
@@ -20,39 +25,43 @@ const load = key => {
   }
 };
 
-// function initButtons() {
-//   watchedBtn = document.querySelector('button[data-id="watched-btn"]');
-//   queueBtn = document.querySelector('button[data-id="queue-btn"]');
-
-//   if (watchedBtn && queueBtn) {
-//     watchedBtn.addEventListener('click', () => {
-//       localStoragePagination.resetPage();
-//       getDataLocalStorage();
-//       renderPagination();
-//     });
-
-//     queueBtn.addEventListener('click', () => {
-//       localStoragePagination.resetPage();
-//       getDataLocalStorage();
-//       renderPagination();
-//       console.log('hello  с моего скрипта');
-//     });
-//   }
-// }
-// window.addEventListener('load', initButtons);
-
-getDataLocalStorage();
-export function getDataLocalStorage() {
+function initButton() {
   watchedBtn = document.querySelector('button[data-id="watched-btn"]');
   queueBtn = document.querySelector('button[data-id="queue-btn"]');
-  if (watchedBtn.classList.contains('header-movie-btn--active')) {
+
+  if (watchedBtn && queueBtn) {
+    watchedBtn.addEventListener('click', () => {
+      localStoragePagination.resetPage();
+      load(KEY_WATCHED);
+      renderPagination();
+    });
+
+    queueBtn.addEventListener('click', () => {
+      localStoragePagination.resetPage();
+      // getDataLocalStorage();
+      localStoragePagination.resetPage();
+      load(KEY_QUEUE);
+      renderPagination();
+      // console.log('hello  с моего скрипта');
+    });
     load(KEY_WATCHED);
-  }
-  if (queueBtn.classList.contains('header-movie-btn--active')) {
-    load(KEY_QUEUE);
-    console.log('hello ddgdgdg');
+    renderPagination();
   }
 }
+// window.addEventListener('load', initButton);
+
+// getDataLocalStorage();
+// export function getDataLocalStorage() {
+//   watchedBtn = document.querySelector('button[data-id="watched-btn"]');
+//   queueBtn = document.querySelector('button[data-id="queue-btn"]');
+//   if (watchedBtn.classList.contains('header-movie-btn--active')) {
+//     load(KEY_WATCHED);
+//   }
+//   if (queueBtn.classList.contains('header-movie-btn--active')) {
+//     load(KEY_QUEUE);
+//     console.log('hello ddgdgdg');
+//   }
+// }
 
 class LocalStoragePagination {
   constructor() {
@@ -198,6 +207,7 @@ function renderMoviesQueueNextPage(itemsForRender) {
 
   moviesListElRef.innerHTML = moviesHTML;
 }
+
 // Ці функції тимчасові save, save, const KEY_TEST = 'test'; const galleryItems
 // const save = (key, galleryItems) => {
 //   try {
