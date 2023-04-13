@@ -45,8 +45,8 @@ export async function onAddW(currentMovieId) {
         }
         else {
             //якщо фільму немає, пушимо в масив та перезаписуємо
-            moviesAddWatched.push(movie);  
-        save(W_KEY, moviesAddWatched);
+            watched.push(movie);  
+        save(W_KEY, watched);
         addWatchedBtn.textContent = 'remove from watched';
         console.log(moviesAddWatched.length);
       }
