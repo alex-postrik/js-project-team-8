@@ -1,5 +1,5 @@
 import { teamItem } from './storage-team';
-import * as basicLightbox from 'basiclightbox';
+// import * as basicLightbox from 'basiclightbox';
 
 const refs = {
   openModalBtn: document.querySelector('.footer-students-btn'),

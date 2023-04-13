@@ -2,10 +2,12 @@ import moviesService from './movies-service.js';
 import { createMovieCardMarkup } from './card.js';
 import { renderPagination, FOR_SEARCH } from './pagination';
 
-const searchForm = document.querySelector('.header-form__search');
-const container = document.querySelector('.container');
+const searchFormEl = document.querySelector('.header-form__search');
+const containerEl = document.querySelector('.container');
+const moviesListEl = document.querySelector('.movies__list');
+const paginationRef = document.querySelector('.pagination');
 
-searchForm.addEventListener('submit', async event => {
+searchFormEl.addEventListener('submit', async event => {
   event.preventDefault();
   const searchInput = document.querySelector('.header-form__input');
   const searchQuery = searchInput.value.trim();
@@ -15,16 +17,18 @@ searchForm.addEventListener('submit', async event => {
     try {
       const movies = await moviesService.fetchSearchMovies();
       if (movies.length === 0) {
+        moviesListEl.innerHTML = '';
+        paginationRef.innerHTML = '';
         if (!document.querySelector('.search-result-not-found')) {
           const searchResultNotFound = document.createElement('div');
           searchResultNotFound.textContent =
             'Search result not successful. Enter the correct movie name.';
           searchResultNotFound.classList.add('search-result-not-found');
-          container.style.position = 'relative';
+          containerEl.style.position = 'relative';
           searchResultNotFound.style.position = 'absolute';
           searchResultNotFound.style.top = '-20px';
           searchResultNotFound.style.left = '-10px';
-          searchForm.insertAdjacentElement('beforeend', searchResultNotFound);
+          searchFormEl.insertAdjacentElement('beforeend', searchResultNotFound);
         }
 
         searchInput.addEventListener('input', function () {
@@ -38,7 +42,6 @@ searchForm.addEventListener('submit', async event => {
           }
         });
       } else {
-        moviesService.resetPage();
         createMovieCardMarkup(movies);
         renderPagination(
           moviesService.page,
