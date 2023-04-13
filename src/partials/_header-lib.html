@@ -1,21 +1,24 @@
 <header class="header-main">
+	<div class="container">
   <div class="header-container">
     <div class="header-main__container">
       <nav class="header-nav">
         <ul class="header-nav__list list">
           <li class="header-nav__item">
-            <a href="./index.html" class="header-nav__link header-nav__changed-color link">Home</a>
+            <a
+              href="./index.html"
+              class="header-nav__link header-nav__changed-color link"
+              >Home</a
+            >
           </li>
           <li class="header-nav__item">
-            <a
-              href="./library.html"
-              class="header-nav__link color-change link"
+            <a href="./library.html" class="header-nav__link color-change link"
               >My Library</a
             >
           </li>
         </ul>
       </nav>
-      <for class="header-form__search">
+      <form class="header-form__search">
         <input
           class="header-form__input"
           type="text"
@@ -23,13 +26,36 @@
           name="searchQuery"
           placeholder="Movie Search"
         />
-        <button class="header-form__btn" type="submi" aria-label="Search">
+        <button class="header-form__btn" type="submit" aria-label="Search">
           <svg class="header-form__icon" width="14" height="14">
             <use href="./image/symbol.svg#icon-search"></use>
           </svg>
         </button>
       </form>
     </div>
+
+    <p class="result visually-hidden">
+      Search result not successful. Enter the correct movie name.
+    </p>
+    <div class="logo">
+      <a class="link logo-link" href="./index.html" aria-label="Logo">
+        <svg class="icon-film" width="32" height="32">
+          <use href="./image/symbol.svg#icon-film"></use>
+        </svg>
+        <span class="logo__label">Filmoteka</span>
+      </a>
+    </div>
+    <div class="header-lib-button">
+      <button type="button" class="header-movi-btn" data-id="watched-btn">
+        Watched
+      </button>
+      <button type="button" class="header-movi-btn" data-id="queue-btn">
+        queue
+      </button>
+    </div>
+  </div>
+</header>
+
 		<p class="result visually-hidden">Search result not successful. Enter the correct movie name.</p>
 		<div class="logo">
 			<a class="link logo-link" href="./index.html" aria-label="Logo">
@@ -39,9 +65,10 @@
 				<span class="logo__label">Filmoteka</span>
 			</a>
 		</div>
-		<div class="header-lib-button">
+		<!-- <div class="header-lib-button">
 			<button type="button" class="header-movi-btn" data-id="watched-btn">Watched</button>
 			<button type="button" class="header-movi-btn" data-id="queue-btn">queue</button>
-		</div>
+		</div> -->
 	</div>
+</div>
 </header>

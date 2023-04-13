@@ -36,8 +36,8 @@ label.shadow {
 
 .container-label span {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background-color: #ffaa00;
   margin: 5px;
   border-radius: 50px;
@@ -45,8 +45,19 @@ label.shadow {
   transition: all 0.3s ease-in;
   position: relative;
   left: 0;
-  top: -19px;
+  top: 0;
   z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    top: 0;
+    min-width: 20px;
+    max-height: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: -19;
+    min-width: 20px;
+    max-height: 20px;
+  }
 }
 
 .container-label span::after {
