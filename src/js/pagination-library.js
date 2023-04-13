@@ -1,7 +1,7 @@
 // import { renderMoviesQueueNextPage } from 'module';
 const KEY_WATCHED = 'movies in watched';
 const KEY_QUEUE = 'movies in queue';
-const LIMIT = 10;
+const LIMIT = 20;
 let itemsForRender = [];
 let dataArray = [];
 
