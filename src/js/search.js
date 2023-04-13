@@ -1,11 +1,13 @@
 import moviesService from './movies-service.js';
-import { createMovieCardMarkup } from './card.js';
-import { renderPagination, FOR_SEARCH } from './pagination';
+import { refs, createMovieCardMarkup } from './card.js';
+import { paginationRef, renderPagination, FOR_SEARCH } from './pagination';
+
+
+console.log(refs.moviesListEl);
+
 
 const searchFormEl = document.querySelector('.header-form__search');
 const containerEl = document.querySelector('.container');
-const moviesListEl = document.querySelector('.movies__list');
-const paginationRef = document.querySelector('.pagination');
 
 searchFormEl.addEventListener('submit', async event => {
   event.preventDefault();
@@ -17,7 +19,7 @@ searchFormEl.addEventListener('submit', async event => {
     try {
       const movies = await moviesService.fetchSearchMovies();
       if (movies.length === 0) {
-        moviesListEl.innerHTML = '';
+        refs.moviesListEl.innerHTML = '';
         paginationRef.innerHTML = '';
         if (!document.querySelector('.search-result-not-found')) {
           const searchResultNotFound = document.createElement('div');
