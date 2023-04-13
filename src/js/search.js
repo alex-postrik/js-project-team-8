@@ -42,6 +42,7 @@ searchFormEl.addEventListener('submit', async event => {
           }
         });
       } else {
+        moviesService.resetPage();
         createMovieCardMarkup(movies);
         renderPagination(
           moviesService.page,
