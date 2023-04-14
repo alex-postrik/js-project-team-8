@@ -30,13 +30,14 @@ export function initButtons() {
   // renderMoviesWatched();
 }
 
+initButtons();
 // window.addEventListener('load', initButtons);
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.href.indexOf('library.html') > -1) {
-    initButtons();
-  }
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   if (window.location.href.indexOf('library.html') > -1) {
+//     initButtons();
+//   }
+// });
 
 const refs = {
   moviesDivEl: document.querySelector('.movies__container'),
