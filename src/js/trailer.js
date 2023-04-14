@@ -87,10 +87,6 @@ export function trailerWatched() {
 
       const lightbox = basicLightbox.create(iframe, {
         onShow: (instance) => {
-          // const closeBtn = instance.element().querySelector('.btn-close-player');
-          // closeBtn.addEventListener('click', () => {
-          //   instance.close();
-          // });
           
         },
       });
