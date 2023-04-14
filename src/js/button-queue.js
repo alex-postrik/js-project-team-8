@@ -10,9 +10,8 @@ let AllMovies = [];
 
 let watchedBtn = document.querySelector('button[data-id="watched-btn"]');
 let queueBtn = document.querySelector('button[data-id="queue-btn"]');
-  
-function initButtons() { 
 
+function initButtons() {
   if (watchedBtn && queueBtn) {
     watchedBtn.addEventListener('click', () => {
       watchedBtn.classList.add('header-movie-btn--active');
@@ -43,6 +42,7 @@ initButtons();
 const refs = {
   moviesDivEl: document.querySelector('.movies__container'),
   moviesListEl: document.querySelector('.movies__list'),
+  paginationLibrary: document.querySelector('.pagination'),
   // btnWatched: document.querySelector('button[data-id="watched-btn"]'),
   // btnQueue: document.querySelector('button[data-id="queue-btn"]'),
 };
@@ -52,6 +52,7 @@ export function renderMoviesWatched() {
 
   if (!AllMovies || AllMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
+    refs.paginationLibrary.innerHTML = '';
     return;
   }
   const markupWatched = AllMovies.slice(0, 20)
@@ -85,6 +86,7 @@ export function renderMoviesQueue() {
 
   if (!AllMovies || AllMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
+    refs.paginationLibrary.innerHTML = '';
     return;
   }
 
