@@ -1,10 +1,18 @@
+
+ import moviesService from './movies-service.js';
+import { createMovieCardMarkup } from './card.js';
+import { renderPagination, FOR_SEARCH } from './pagination';
+
 import moviesService from './movies-service.js';
 import { refs, createMovieCardMarkup } from './card.js';
 import { paginationRef, renderPagination, FOR_SEARCH } from './pagination';
 
 
+
 const searchFormEl = document.querySelector('.header-form__search');
 const containerEl = document.querySelector('.container');
+const moviesListEl = document.querySelector('.movies__list');
+const paginationRef = document.querySelector('.pagination');
 
 searchFormEl.addEventListener('submit', async event => {
   event.preventDefault();
@@ -12,12 +20,16 @@ searchFormEl.addEventListener('submit', async event => {
   const searchQuery = searchInput.value.trim();
 
   if (searchQuery) {
-    moviesService.searchQuery = searchQuery;
+
+  moviesService.searchQuery = searchQuery;
     moviesService.resetPage();
+
     try {
+      moviesService.searchQuery = searchQuery;
+      moviesService.resetPage(); // reset the page to 1 for a new collection
+      moviesListEl.innerHTML = ''; // clear the movies list for a new collection
       const movies = await moviesService.fetchSearchMovies();
       if (movies.length === 0) {
-        refs.moviesListEl.innerHTML = '';
         paginationRef.innerHTML = '';
         if (!document.querySelector('.search-result-not-found')) {
           const searchResultNotFound = document.createElement('div');
@@ -57,6 +69,11 @@ searchFormEl.addEventListener('submit', async event => {
     }
   }
 });
+
+
+
+
+
 
 // import moviesService from './movies-service.js';
 // import  {createMovieCardMarkup } from './card.js';
