@@ -8,28 +8,22 @@ import noimage from '../image/No-Image-Placeholder.jpg';
 let AllMovies = [];
 // let queueMovies = [];
 
-export function initButtons() {
-  watchedBtn = document.querySelector('button[data-id="watched-btn"]');
-  queueBtn = document.querySelector('button[data-id="queue-btn"]');
+watchedBtn = document.querySelector('button[data-id="watched-btn"]');
+queueBtn = document.querySelector('button[data-id="queue-btn"]');
+  
+function initButtons() { 
 
   if (watchedBtn && queueBtn) {
     watchedBtn.addEventListener('click', () => {
       watchedBtn.classList.add('header-movie-btn--active');
       queueBtn.classList.remove('header-movie-btn--active');
       renderMoviesWatched();
-      // localStoragePagination.resetPage();
-      // getDataLocalStorage();
-      // renderPagination();
     });
 
     queueBtn.addEventListener('click', () => {
       queueBtn.classList.add('header-movie-btn--active');
       watchedBtn.classList.remove('header-movie-btn--active');
       renderMoviesQueue();
-      // localStoragePagination.resetPage();
-      // getDataLocalStorage();
-      // renderPagination();
-      // console.log('hello  с моего скрипта');
     });
   }
   // watchedBtn.classList.add('header-movie-btn--active');
@@ -37,13 +31,20 @@ export function initButtons() {
   // renderMoviesWatched();
 }
 
-window.addEventListener('load', initButtons);
+initButtons();
+// window.addEventListener('load', initButtons);
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   if (window.location.href.indexOf('library.html') > -1) {
+//     initButtons();
+//   }
+// });
 
 const refs = {
   moviesDivEl: document.querySelector('.movies__container'),
   moviesListEl: document.querySelector('.movies__list'),
-  btnWatched: document.querySelector('button[data-id="watched-btn"]'),
-  btnQueue: document.querySelector('button[data-id="queue-btn"]'),
+  // btnWatched: document.querySelector('button[data-id="watched-btn"]'),
+  // btnQueue: document.querySelector('button[data-id="queue-btn"]'),
 };
 
 export function renderMoviesWatched() {
@@ -76,7 +77,7 @@ export function renderMoviesWatched() {
     .join('');
 
   refs.moviesListEl.innerHTML = markupWatched;
-  refs.btnWatched.addEventListener('click', renderMoviesWatched);
+  watchedBtn.addEventListener('click', renderMoviesWatched);
 }
 
 export function renderMoviesQueue() {
@@ -110,7 +111,7 @@ export function renderMoviesQueue() {
     .join('');
 
   refs.moviesListEl.innerHTML = moviesHTML;
-  refs.btnQueue.addEventListener('click', renderMoviesQueue);
+  queueBtn.addEventListener('click', renderMoviesQueue);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
