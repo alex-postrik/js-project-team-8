@@ -4,11 +4,11 @@ const watchedBtn = document.querySelector('button[data-id="watched-btn"]');
 const queueBtn = document.querySelector('button[data-id="queue-btn"]');
 const searchListEl = document.querySelector('.movies__list');
 
-const parsedWatched = JSON.parse(localStorage.getItem('watchedMovies'));
+const parsedWatched = JSON.parse(localStorage.getItem('movies in watched'));
 const parsedQueue = JSON.parse(localStorage.getItem('movies in queue'));
 
-const searchForm = document.querySelector('.header-form__search');
-const searchInput = document.querySelector('.header-form__input');
+const searchForm = document.querySelector('.js-lib__search');
+const searchInput = document.querySelector('.js-lib__input');
 searchInput.addEventListener('input', e => {});
 
 searchForm.addEventListener('submit', event => {
@@ -18,12 +18,6 @@ searchForm.addEventListener('submit', event => {
   }
   if (queueBtn.classList.contains('header-movie-btn--active')) {
     searchInQueue();
-  }
-  if (
-    !watchedBtn.classList.contains('header-movie-btn--active') &&
-    !queueBtn.classList.contains('header-movie-btn--active')
-  ) {
-    Notiflix.Notify.failure('Please chose Watched or Queue list');
   }
   event.target.reset();
 });
@@ -36,14 +30,14 @@ function searchInWatched() {
   for (const watchedTitle of parsedWatched) {
     const title = watchedTitle.title.toLowerCase();
     if (title.includes(searchInput.value)) {
-      const searchedCardMarkup = `<li class="movies__item" data-movies="${queueTitle.id}">
+      const searchedCardMarkup = `<li class="movies__item" data-movies="${watchedTitle.id}">
                 <div class="movies__thumb">
-                    <img class="movies__img" src="${queueTitle.posterPath}" alt="${queueTitle.title}"/>
+                    <img class="movies__img" src="${watchedTitle.posterPath}" alt="${watchedTitle.title}"/>
                 </div>
-                    <p class="movies__title">${queueTitle.title}</p>
-                    <p class="movies__info">${queueTitle.genres} | ${queueTitle.releaseDate}</p>
+                    <p class="movies__title">${watchedTitle.title}</p>
+                    <p class="movies__info">${watchedTitle.genres} | ${watchedTitle.releaseDate}</p>
             </li>`;
-      searchListEl.innerHTML = searchedCardMarkup;
+        searchListEl.insertAdjacentHTML("beforeend", searchedCardMarkup);
     }
   }
 }
@@ -54,7 +48,7 @@ function searchInQueue() {
     Notiflix.Notify.failure('Sorry, Your Queue list is empty');
   }
   for (const queueTitle of parsedQueue) {
-    const title = queueTitle.title.toLowerCase();
+      const title = queueTitle.title.toLowerCase();
     if (title.includes(searchInput.value)) {
       const searchedCardMarkup = `<li class="movies__item" data-movies="${queueTitle.id}">
                 <div class="movies__thumb">
@@ -63,7 +57,7 @@ function searchInQueue() {
                     <p class="movies__title">${queueTitle.title}</p>
                     <p class="movies__info">${queueTitle.genres} | ${queueTitle.releaseDate}</p>
             </li>`;
-      searchListEl.innerHTML = searchedCardMarkup;
+    searchListEl.insertAdjacentHTML("beforeend", searchedCardMarkup);
     }
   }
 }

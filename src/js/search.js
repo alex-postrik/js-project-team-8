@@ -3,9 +3,6 @@ import { refs, createMovieCardMarkup } from './card.js';
 import { paginationRef, renderPagination, FOR_SEARCH } from './pagination';
 
 
-console.log(refs.moviesListEl);
-
-
 const searchFormEl = document.querySelector('.header-form__search');
 const containerEl = document.querySelector('.container');
 
@@ -16,6 +13,7 @@ searchFormEl.addEventListener('submit', async event => {
 
   if (searchQuery) {
     moviesService.searchQuery = searchQuery;
+    moviesService.resetPage();
     try {
       const movies = await moviesService.fetchSearchMovies();
       if (movies.length === 0) {
@@ -44,7 +42,6 @@ searchFormEl.addEventListener('submit', async event => {
           }
         });
       } else {
-        moviesService.resetPage();
         createMovieCardMarkup(movies);
         renderPagination(
           moviesService.page,

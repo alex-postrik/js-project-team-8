@@ -1,347 +1,400 @@
-body.show-modal-about-movie .backdrop{
-    opacity: 1;
-    visibility: visible;
-    pointer-events: initial;
+body.show-modal-about-movie .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
 }
 
 body.show-modal-about-movie .modal-about-movie {
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .backdrop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-    background-color: var(--overlay-bg-color);
-    z-index: 5;
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    pointer-events: auto;
-    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--overlay-bg-color);
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  pointer-events: auto;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .modal-about-movie {
-    position: absolute;
-    width: 280px;
-    min-height: auto;
+  position: absolute;
+  width: 280px;
+  min-height: auto;
+  height: auto;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  background-color: var(--akcent-text-color);
+  padding: 48px 20px 40px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 68px;
+    width: 704px;
     height: auto;
-    left: 50%;
-    top: 20%;
-    transform: translateX(-50%);
-    background-color: var(--akcent-text-color);
-    padding: 48px 20px 40px;
+    min-height: 552px;
+    padding: 40px 36px 64px 36px;
+  }
 
-    @media (min-width: 768px) {
-        display: flex;
-        gap: 68px;
-        width: 704px;
-        height: auto;
-        min-height: 552px;
-        padding: 40px 36px 64px 36px;
-    }
-
-    @media (min-width: 1200px) {
-        gap: 16px;
-        width: 806px;
-        min-height: 558px;
-        padding: 40px 12px 40px 12px;
-    }
+  @media (min-width: 1200px) {
+    gap: 16px;
+    width: 806px;
+    min-height: 558px;
+    padding: 40px 12px 40px 12px;
+  }
 }
 
-
 .btn-modal-close-about-movie {
-    position: absolute;
-    line-height: 0;
-    padding: 0;
-    border: none;
-    background-color:#FFFFFF;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+  position: absolute;
+  line-height: 0;
+  padding: 0;
+  border: none;
+  background-color: #ffffff;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .images-movie-modal {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    width: 240px;
-    min-height: 375px;
-    border-radius: 5px;
-    object-fit: cover;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 240px;
+  min-height: 375px;
+  border-radius: 5px;
+  object-fit: cover;
 
-    @media (min-width: 768px) {
-            width: 264px;
-            height: 373.55px;
-    }
+  @media (min-width: 768px) {
+    width: 264px;
+    height: 373.55px;
+  }
 
-    @media (min-width: 1200px) {
-        width: 375px;
-        height: 478px;
-    }
+  @media (min-width: 1200px) {
+    width: 375px;
+    height: 478px;
+  }
 }
 
-.about-movie{
-    margin-top: 20px;
+.about-movie {
+  margin-top: 20px;
 
-    @media (min-width: 768px) {
-        margin-top: 0;
-            // display: inline-block;
-            margin-bottom: 0;
-    }
-    
+  @media (min-width: 768px) {
+    margin-top: 0;
+    // display: inline-block;
+    margin-bottom: 0;
+  }
 }
 
-.name-movie{
-    padding: 0;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
+.name-movie {
+  padding: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: var(--primary-text-color);
+
+  @media (min-width: 768px) {
     font-size: 20px;
     line-height: 23px;
+  }
 
-    color: var(--primary-text-color);
-
-    @media (min-width: 768px) {
-        font-size: 20px;
-        line-height: 23px;
-    }
-
-    @media (min-width: 1200px) {
-        font-size: 30px;
-        line-height: 35px;
-    }
-    
+  @media (min-width: 1200px) {
+    font-size: 30px;
+    line-height: 35px;
+  }
 }
 
-.characteristics-container{
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    margin-top: 20px;
-    padding: 0;
-    
+.characteristics-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+  padding: 0;
 }
 
-.characteristics-element:not(:first-child){
-    margin-top: 8px;
-    min-width: 69px;
+.characteristics-element:not(:first-child) {
+  margin-top: 8px;
+  min-width: 69px;
 }
 
 .characteristic-text {
-    font-family: var(--font-family);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.3;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
 
-    color: #8C8C8C;
+  color: #8c8c8c;
 }
 
 .characteristics-value-element:not(:first-child) {
-    margin-top: 8px;
-    text-overflow: ellipsis;
+  margin-top: 8px;
+  text-overflow: ellipsis;
 }
 
-.characteristics-value-text{
-    text-overflow: ellipsis;
-    font-family: var(--font-family);
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 1.3;
-    
-        color: var(--primary-text-color);
+.characteristics-value-text {
+  text-overflow: ellipsis;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+
+  color: var(--primary-text-color);
 }
 
-.about-text{
-    margin-top: 20px;
-    padding: 0;
+.about-text {
+  margin-top: 20px;
+  padding: 0;
 
-    font-family: var(--font-family);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.3;
-   
-    text-transform: uppercase;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
 
-    color: var(--primary-text-color);
+  text-transform: uppercase;
+
+  color: var(--primary-text-color);
 }
 
-.about-movie-text{
-    margin-top: 8px;
-    font-family: var(--font-family);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.6;
-    /* or 167% */
-    color: var(--primary-text-color);
+.about-movie-text {
+  margin-top: 8px;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+  /* or 167% */
+  color: var(--primary-text-color);
 }
 
-
-.btn-container{
-    margin-top: 20px;
-    display: flex;
+.btn-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media (min-width: 768px) {
     gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    @media (min-width: 768px) {
-        gap: 8px;
-        justify-content: flex-start;
-    }
-    @media (min-width: 1200px) {
-        flex-wrap: nowrap;
-    }
+    justify-content: flex-start;
+  }
+  @media (min-width: 1200px) {
+    flex-wrap: nowrap;
+  }
 }
 
 .btn-add-watched {
-    padding: 10px 12px;
-    
-    min-width: 125px;
-    height: 34px;
-    border: none;
-    background: var(--secondary-text-color);
-    box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
-    border-radius: 100px;
-    cursor: pointer;
+  padding: 10px 12px;
 
-    text-transform: uppercase;
-    font-family: var(--font-family);
-    font-style: normal;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #FFFFFF;
+  min-width: 125px;
+  height: 34px;
+  border: none;
+  background: var(--secondary-text-color);
+  box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+  border-radius: 100px;
+  cursor: pointer;
 
-        @media (min-width: 768px) {
-            min-width: 137px;
-            height: 38px;
-        }
-    
-        @media (min-width: 1200px) {
-            min-width: 165px;
-            height: 42px;
-        }
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #ffffff;
+
+  @media (min-width: 768px) {
+    min-width: 137px;
+    height: 38px;
+  }
+
+  @media (min-width: 1200px) {
+    min-width: 165px;
+    height: 42px;
+  }
 }
 
 .btn-add-queue {
+  padding: 10px 14px;
+  min-width: 111px;
+  margin: 0;
+  height: 34px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 100px;
+  cursor: pointer;
 
-    padding: 10px 14px;
-    min-width: 111px;
-    margin: 0;
-    height: 34px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 100px;
-    cursor: pointer;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--secondary-text-color);
 
-    font-family: var(--font-family);
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.3;
-    color: var(--secondary-text-color);
-    
-    &:hover {
-        background: var(--secondary-text-color);
-        color: #FFFFFF;
-    }
-
-        @media (min-width: 768px) {
-            min-width: 119px;
-            height: 38px;
-        }
-    
-        @media (min-width: 1200px) {
-            min-width: 134px;
-            height: 42px;
-        }
-}
-
-.rating-movie{
-    width: 36px;
-    height: 16px;
-    padding: 1px 10px;
-    font-family: var(--font-family);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.3;
-    color: #FFFFFF;
-    text-transform: uppercase;
+  &:hover {
     background: var(--secondary-text-color);
-    border-radius: 5px;
+    color: #ffffff;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 119px;
+    height: 38px;
+  }
+
+  @media (min-width: 1200px) {
+    min-width: 134px;
+    height: 42px;
+  }
 }
 
-.icon-close{
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-    
+.rating-movie {
+  width: 36px;
+  height: 16px;
+  padding: 1px 10px;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #ffffff;
+  text-transform: uppercase;
+  background: var(--secondary-text-color);
+  border-radius: 5px;
 }
 
+.icon-close {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
 
 //Для кнопки трейлеру
-.container-trailer-btn{
-    display: flex;
-    justify-content: center;
-    margin-top: 8px;
+.container-trailer-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
 
-    @media (min-width: 768px) {
-        display: block;
-        width: 90px;
-        height: 38px;
-    }
+  @media (min-width: 768px) {
+    display: block;
+    width: 90px;
+    height: 38px;
+  }
 }
 
 .movies__trailer {
-    
-    padding: 10px 12px;
-        
+  padding: 10px 12px;
+
+  width: 90px;
+  height: 34px;
+  border: 1px solid #000000;
+  background: var(--secondary-text-color);
+  // box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
+  border-radius: 100px;
+  cursor: pointer;
+  background: #ffffff;
+
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--secondary-text-color);
+  @media (min-width: 768px) {
     width: 90px;
-    height: 34px;
-    border: 1px solid #000000;
+    height: 38px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 100px;
+    height: 42px;
+  }
+
+  &:hover {
     background: var(--secondary-text-color);
-    // box-shadow: 0px 0px 7px rgba(27, 27, 27, 0.15);
-    border-radius: 100px;
-    cursor: pointer;
-    background: #FFFFFF;
+    color: #ffffff;
+  }
+}
 
-    text-transform: uppercase;
-    font-family: var(--font-family);
-    font-style: normal;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.3;
-    color: var(--secondary-text-color);    
-        @media (min-width: 768px) {
-        
-            width: 90px;
-            height: 38px;
-        }
-    
-        @media (min-width: 1200px) {    
-            width: 100px;
-            height: 42px;
-        }
+// Стилі для плеєра до трейлера
+// Закриття плеєра по кнопці модалки
+// .player {
+//   position: absolute;
+//   //   display: none;
+//   top: 48px;
+//   left: 0;
+//   width: 280px;
+//   height: 400px;
+//   padding: 132px 20px 132px;
+//   background-color: #ffffff;
+//   border: none;
 
-        &:hover {
-            background: var(--secondary-text-color);
-            color: #FFFFFF;
-        }
-    }
+//   @media (min-width: 768px) {
+//     // display: block;
+//     top: 40px;
+//     left: 0;
+//     width: 704px;
+//     height: 512px;
+//     padding: 76px 33px 33px;
+//   }
+
+//   @media (min-width: 1200px) {
+//     left: 0;
+//     width: 806px;
+//     height: 518px;
+//     padding: 49px 33px 33px;
+//   }
+// }
+
+// Закриття плеєра по окремій кнопці
+.player {
+  position: absolute;
+  //   display: none;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 400px;
+  padding: 32px 20px ;
+  background-color: #ffffff;
+  border: none;
+
+  @media (min-width: 768px) {
+    // display: block;
+    left: 0;
+    width: 704px;
+    height: 512px;
+    padding: 76px 33px;
+  }
+
+  @media (min-width: 1200px) {
+    left: 0;
+    width: 806px;
+    height: 100%;
+    padding: 80px 33px;
+  }
+}
+.player-none {
+  display: none;
+  // background-color: #ffffff00;
+}

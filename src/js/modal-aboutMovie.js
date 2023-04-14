@@ -12,6 +12,9 @@ import { renderMoviesWatched } from './button-queue';
 
 const KEY_CODE_ESC = "Escape";
 
+let watchedBtn = document.querySelector('button[data-id="watched-btn"]');
+let queueBtn = document.querySelector('button[data-id="queue-btn"]');
+
 const refs = {
     modalContainer: document.querySelector(".modal-about-movie"),
     backdrop: document.querySelector('.backdrop'),
