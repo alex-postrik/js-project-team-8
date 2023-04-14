@@ -44,6 +44,7 @@ const refs = {
   moviesListEl: document.querySelector('.movies__list'),
   btnWatched: document.querySelector('button[data-id="watched-btn"]'),
   btnQueue: document.querySelector('button[data-id="queue-btn"]'),
+  paginationLibrary: document.querySelector('.pagination'),
 };
 
 export function renderMoviesWatched() {
@@ -51,6 +52,7 @@ export function renderMoviesWatched() {
 
   if (!AllMovies || AllMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
+    refs.paginationLibrary.innerHTML = '';
     return;
   }
   const markupWatched = AllMovies.slice(0, 20)
@@ -84,6 +86,7 @@ export function renderMoviesQueue() {
 
   if (!AllMovies || AllMovies.length === 0) {
     refs.moviesListEl.innerHTML = `<div class="movies_not"><img class="" src="${nomovies}" alt="sorry no movies"/> </div>`;
+    refs.paginationLibrary.innerHTML = '';
     return;
   }
 
