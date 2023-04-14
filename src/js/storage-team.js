@@ -8,7 +8,7 @@ import anastasia from '../image/user-image/222.png';
 import denis from '../image/user-image/man (5).png';
 import igor from '../image/user-image/man (3).png';
 import anton from '../image/user-image/man22.png';
-import us from '../image/user-image/user.png';
+import olha from '../image/user-image/woman.png';
 import use from '../image/user-image/man (4).png';
 import user from '../image/user-image/man.png';
 import users from '../image/user-image/professor.png';
@@ -132,10 +132,10 @@ export const teamItem = [
   },
 
   {
-    name: 'User',
+    name: 'Olha',
     position: 'Developer',
-    gitHub: 'https://github.com/alex-postrik',
-    previewImg: us,
+    gitHub: 'https://github.com/Okayolha',
+    previewImg: olha,
     svg: gitHub,
     // lin: linked.png,
   },
