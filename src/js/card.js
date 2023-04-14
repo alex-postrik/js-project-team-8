@@ -2,7 +2,7 @@ import moviesService from './movies-service';
 import { renderPagination, FOR_POPULAR } from './pagination';
 import noimage from '../image/No-Image-Placeholder.jpg';
 
-export const refs = {
+const refs = {
   moviesDivEl: document.querySelector('.movies__container'),
   moviesListEl: document.querySelector('.movies__list'),
 };

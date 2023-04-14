@@ -82,7 +82,7 @@ export const teamItem = [
     // lin: linked.png,
   },
   {
-    name: 'Oleksandr',
+    name: 'User',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
     previewImg: users,
@@ -98,7 +98,7 @@ export const teamItem = [
     // lin: linked.png,
   },
   {
-    name: 'Oleksandr',
+    name: 'User',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
     previewImg: Oleksandr,
@@ -106,7 +106,7 @@ export const teamItem = [
     // lin: linked.png,
   },
   {
-    name: 'Oleksandr',
+    name: 'User',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
     previewImg: user,
@@ -114,7 +114,7 @@ export const teamItem = [
     // lin: linked.png,
   },
   {
-    name: 'Oleksandr',
+    name: 'User',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
     previewImg: use,
@@ -132,7 +132,7 @@ export const teamItem = [
   },
 
   {
-    name: 'Oleksandr',
+    name: 'User',
     position: 'Developer',
     gitHub: 'https://github.com/alex-postrik',
     previewImg: us,
