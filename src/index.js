@@ -10,7 +10,9 @@ import './js/card';
 import './js/modal.info';
 import './js/trailer';
 
+
 import './js/card';
+import * as myModuleCard from './js/card';
 
 import './js/addToWatched';
 import './js/pagination';
