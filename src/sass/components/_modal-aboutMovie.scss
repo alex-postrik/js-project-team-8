@@ -248,10 +248,12 @@ body.show-modal-about-movie .modal-about-movie {
   font-size: 12px;
   line-height: 1.3;
   color: var(--secondary-text-color);
+  transition: background-color 0.25s, color 0.25s;
 
   &:hover {
     background: var(--secondary-text-color);
     color: #ffffff;
+    transition: background-color 0.25s, color 0.25s;
   }
 
   @media (min-width: 768px) {
@@ -334,6 +336,7 @@ body.show-modal-about-movie .modal-about-movie {
   &:hover {
     background: var(--secondary-text-color);
     color: #ffffff;
+    transition: background-color 0.25s, color 0.25s;
   }
 }
 
@@ -375,7 +378,7 @@ body.show-modal-about-movie .modal-about-movie {
   left: 0;
   width: 280px;
   height: 400px;
-  padding: 32px 20px ;
+  padding: 32px 20px;
   background-color: #ffffff;
   border: none;
 
