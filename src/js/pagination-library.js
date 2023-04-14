@@ -19,7 +19,7 @@ const load = key => {
   try {
     const arrayFromLocalStorage = localStorage.getItem(key);
     return arrayFromLocalStorage === null
-      ? undefined
+      ? []
       : (dataArray = JSON.parse(arrayFromLocalStorage));
   } catch (error) {
     console.log(error.message);
@@ -27,8 +27,8 @@ const load = key => {
 };
 
 function initButton() {
-  watchedBtn = document.querySelector('button[data-id="watched-btn"]');
-  queueBtn = document.querySelector('button[data-id="queue-btn"]');
+  let watchedBtn = document.querySelector('button[data-id="watched-btn"]');
+  let queueBtn = document.querySelector('button[data-id="queue-btn"]');
 
   if (watchedBtn && queueBtn) {
     watchedBtn.addEventListener('click', () => {
@@ -99,13 +99,20 @@ function сutItems() {
 
   let itemsForRender = dataArray.slice(beginGet, endGet);
   renderMoviesQueueNextPage(itemsForRender);
-  console.log('cut items', itemsForRender);
+  // console.log('cut items', itemsForRender);
 }
 renderPagination();
 
 export function renderPagination() {
   let markup = '';
   localStoragePagination.lastPages = Math.ceil(dataArray.length / LIMIT);
+  // console.log(dataArray, 'что в рендер приходит');
+  if (dataArray.length === 0) {
+    paginationLibraryRef.innerHTML = '';
+    // console.log('привет из удаления пагинации');
+    // console.log(dataArray.length);
+    return;
+  }
   if (
     !localStoragePagination.currentPage ||
     localStoragePagination.currentPage > localStoragePagination.lastPages
@@ -170,7 +177,7 @@ export function renderPagination() {
 paginationLibraryRef.addEventListener('click', onPaginationClick);
 
 function onPaginationClick(evt) {
-  console.log(evt.target.textContent);
+  // console.log(evt.target.textContent);
 
   if (evt.target.textContent === '...') return;
   if (evt.target.classList.contains('arrow-right')) {
@@ -187,7 +194,7 @@ function onPaginationClick(evt) {
   сutItems();
   renderPagination();
   // scrollToTop();
-  console.log('из класса страница текущая', localStoragePagination.currentPage);
+  // console.log('из класса страница текущая', localStoragePagination.currentPage);
 }
 
 function renderMoviesQueueNextPage(itemsForRender) {
