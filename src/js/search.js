@@ -1,6 +1,8 @@
- import moviesService from './movies-service.js';
+
+import moviesService from './movies-service.js';
 import { createMovieCardMarkup } from './card.js';
 import { renderPagination, FOR_SEARCH } from './pagination';
+
 
 const searchFormEl = document.querySelector('.header-form__search');
 const containerEl = document.querySelector('.container');
@@ -13,6 +15,10 @@ searchFormEl.addEventListener('submit', async event => {
   const searchQuery = searchInput.value.trim();
 
   if (searchQuery) {
+
+  moviesService.searchQuery = searchQuery;
+    moviesService.resetPage();
+
     try {
       moviesService.searchQuery = searchQuery;
       moviesService.resetPage(); // reset the page to 1 for a new collection
