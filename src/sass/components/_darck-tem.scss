@@ -77,8 +77,9 @@ input[type = "checkbox"]:checked ~ span {
 
 body.dark-theme {
    background-color: #333333;
-color: #e5ead7;
- transition: color ease-out 1s;
+   color: #e5ead7;
+   transition: background-color 0,7s, color 0,7s;
+
 
    &.muvies__title {
      color: #e5ead7;
