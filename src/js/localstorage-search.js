@@ -1,5 +1,5 @@
 import Notiflix from 'notiflix';
-
+import { paginationLibraryRef } from './pagination-library';
 const watchedBtn = document.querySelector('button[data-id="watched-btn"]');
 const queueBtn = document.querySelector('button[data-id="queue-btn"]');
 const searchListEl = document.querySelector('.movies__list');
@@ -37,9 +37,10 @@ function searchInWatched() {
                     <p class="movies__title">${watchedTitle.title}</p>
                     <p class="movies__info">${watchedTitle.genres} | ${watchedTitle.releaseDate}</p>
             </li>`;
-        searchListEl.insertAdjacentHTML("beforeend", searchedCardMarkup);
+      searchListEl.insertAdjacentHTML('beforeend', searchedCardMarkup);
     }
   }
+  paginationLibraryRef.innerHTML = '';
 }
 
 function searchInQueue() {
@@ -48,7 +49,7 @@ function searchInQueue() {
     Notiflix.Notify.failure('Sorry, Your Queue list is empty');
   }
   for (const queueTitle of parsedQueue) {
-      const title = queueTitle.title.toLowerCase();
+    const title = queueTitle.title.toLowerCase();
     if (title.includes(searchInput.value)) {
       const searchedCardMarkup = `<li class="movies__item" data-movies="${queueTitle.id}">
                 <div class="movies__thumb">
@@ -57,7 +58,8 @@ function searchInQueue() {
                     <p class="movies__title">${queueTitle.title}</p>
                     <p class="movies__info">${queueTitle.genres} | ${queueTitle.releaseDate}</p>
             </li>`;
-    searchListEl.insertAdjacentHTML("beforeend", searchedCardMarkup);
+      searchListEl.insertAdjacentHTML('beforeend', searchedCardMarkup);
     }
   }
+  paginationLibraryRef.innerHTML = '';
 }
