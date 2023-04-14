@@ -1,12 +1,7 @@
 
- import moviesService from './movies-service.js';
+import moviesService from './movies-service.js';
 import { createMovieCardMarkup } from './card.js';
 import { renderPagination, FOR_SEARCH } from './pagination';
-
-import moviesService from './movies-service.js';
-import { refs, createMovieCardMarkup } from './card.js';
-import { paginationRef, renderPagination, FOR_SEARCH } from './pagination';
-
 
 
 const searchFormEl = document.querySelector('.header-form__search');

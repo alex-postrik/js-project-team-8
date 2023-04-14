@@ -17,7 +17,7 @@ export let param = 1;
 
 //testPaginetion();
 
-export const paginationRef = document.querySelector('.pagination');
+const paginationRef = document.querySelector('.pagination');
 
 paginationRef.addEventListener('click', onPaginationClick);
 
@@ -50,7 +50,7 @@ function scrollToTop() {
 export function renderPagination(page, pages, curParam) {
   let markup = '';
   param = curParam;
-  if (!page || page > pages) return;
+  if (!page || page > pages ) return;
 
   if (page > 1)
     markup += `<li class="pagination__arrow-left arrow-left"><svg class="arrow-left" width="16" height="16" viewBox="0 0 16 16" fill="none"
