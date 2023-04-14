@@ -8,8 +8,8 @@ import noimage from '../image/No-Image-Placeholder.jpg';
 let AllMovies = [];
 // let queueMovies = [];
 
-watchedBtn = document.querySelector('button[data-id="watched-btn"]');
-queueBtn = document.querySelector('button[data-id="queue-btn"]');
+let watchedBtn = document.querySelector('button[data-id="watched-btn"]');
+let queueBtn = document.querySelector('button[data-id="queue-btn"]');
   
 function initButtons() { 
 
