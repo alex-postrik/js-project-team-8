@@ -75,78 +75,73 @@ input[type = "checkbox"]:checked ~ span {
 }
 
 
-body.light-theme {
-  background-color: #101e2d;
-  color: white;
-}
-
 body.dark-theme {
-  background-color: #333333;
+   background-color: #333333;
 
-  color: e5ead7;  
+   color: e5ead7;  
 
-  &.muvies__title {
-    color: #e5ead7;
-  }
-    & .pagination-button {
-    background-color: #333333;
-    color: lightgrey;
-  }
-  & .arrow-right {
-    stroke: darkgrey
-  }
-  
-  & .card__title {
-    color: #cccccc
-  }
+   &.muvies__title {
+     color: #e5ead7;
+   }
+     & .pagination-button {
+     background-color: #333333;
+     color: lightgrey;
+   }
+   & .arrow-right {
+     stroke: darkgrey
+   }
 
-  & .card__text {
-    color: #ff8800
-  }
-  & .footer-text {
-    color: lightgrey;
-  }
-  &.footer-students-btn  {
-    color: #ffaa00;
-  }
-  & .footer-link:hover {
-    color: #e5ead7;
-  }
-  & .pagination__arrow-left{
-    background-color: #b7b7b7;
-  }
+   & .card__title {
+     color: #cccccc
+   }
 
-  & .pagination__arrow-right{
-    background-color: #b7b7b7;
-  }
-  & .pagination__button{
-    color: #fff;
-  }
-  & .footer{
-    background-color: #545454;
-  }
+   & .card__text {
+     color: #ff8800
+   }
+   & .footer-text {
+     color: lightgrey;
+   }
+   &.footer-students-btn  {
+     color: #ffaa00;
+   }
+   & .footer-link:hover {
+     color: #e5ead7;
+   }
+   & .pagination__arrow-left{
+     background-color: #b7b7b7;
+   }
 
-  & .footer__text{
-    color: #d8d8d8;
-  }
+   & .pagination__arrow-right{
+     background-color: #b7b7b7;
+   }
+   & .pagination__button{
+     color: #fff;
+   }
+   & .footer{
+     background-color: #545454;
+   }
 
-  & .footer-students-btn{
-    color: rgb(226 226 226);
-    &:hover,
-      &:active,
-      &:focus {
-        color: #ffffff;
-        text-decoration: none;
-      }
-    
-      #heart {
-        width: 18px;
-        height: 19px;
-      }  
-  }
+   & .footer__text{
+     color: #d8d8d8;
+   }
 
-  & .footer .container span {
-      color: #d8d8d8;
-  }
-}
+   & .footer-students-btn{
+     color: rgb(226 226 226);
+     &:hover,
+       &:active,
+       &:focus {
+         color: #ffffff;
+         text-decoration: none;
+       }
+
+       #heart {
+         width: 18px;
+         height: 19px;
+       }  
+   }
+
+   & .footer .container span {
+       color: #d8d8d8;
+   }
+ }
 
