@@ -4,9 +4,9 @@ const KEY_WATCHED = 'movies in watched';
 const KEY_QUEUE = 'movies in queue';
 const LIMIT = 20;
 let itemsForRender = [];
-let dataArray = [];
+export let dataArray = [];
 
-const paginationLibraryRef = document.querySelector('.pagination');
+export const paginationLibraryRef = document.querySelector('.pagination');
 
 // window.addEventListener('load', initButtons);
 document.addEventListener('DOMContentLoaded', () => {

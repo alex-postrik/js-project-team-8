@@ -5,10 +5,10 @@ let moviesAddWatched = [];
 export async function onAddW(currentMovieId) {
 
   const addWatchedBtn = document.querySelector('.btn-add-watched');
-  console.log(addWatchedBtn);
+  
   const W_KEY = 'movies in watched';
   const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
-  console.log(currentMovieId);
+  
 
   const movieChecked = localStorage.getItem(W_KEY);
   const watched = load(W_KEY);
@@ -22,11 +22,10 @@ export async function onAddW(currentMovieId) {
   }
     //якщо є дані - перевіряємо, чи є там айді фільму
     else if (movieChecked !== null) {
-      console.log(movieChecked.includes(currentMovieId));
-       console.log(moviesAddWatched.length);
+      
     
       if (movieChecked.includes(currentMovieId)) {
-          if (moviesAddWatched.length === 1) {
+          if (moviesAddWatched.length === 1 && watched.length === 1) {
             localStorage.removeItem(W_KEY);
             moviesAddWatched = [];
             addWatchedBtn.textContent = 'add to watched';
@@ -35,7 +34,7 @@ export async function onAddW(currentMovieId) {
 
               //шукаємо фільм за індексом, видаляємо з масиву та перезаписуємо
                     let indexM = watched.map(el => el.id).indexOf(Number(currentMovieId));
-          console.log(indexM);
+          
             watched.splice(indexM, 1);
             moviesAddWatched = watched;
             save(W_KEY, watched);
@@ -48,7 +47,7 @@ export async function onAddW(currentMovieId) {
             watched.push(movie);  
         save(W_KEY, watched);
         addWatchedBtn.textContent = 'remove from watched';
-        console.log(moviesAddWatched.length);
+       
       }
     }
   
