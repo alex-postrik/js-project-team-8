@@ -26,9 +26,10 @@ const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
       //  console.log(moviesInQueue.length);
     
       if (movieCheck.includes(currentMovieId)) {
-          if (moviesInQueue.length === 1) {
+          if (moviesInQueue.length === 1 && queue.length === 1) {
             localStorage.removeItem(Q_KEY);
             moviesInQueue = [];
+            queue = []
              qBtn.textContent = 'add to queque';
 
         }
