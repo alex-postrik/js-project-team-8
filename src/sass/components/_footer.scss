@@ -15,10 +15,53 @@
     line-height: 16px;
   }
 }
-
 .footer__icon {
-  padding-left:10, 33;
- 
+    padding-left: 10, 33;
+  }
+
+
+.footer {
+  &__heart {
+      position: relative;
+      align-self: baseline;
+      margin-left: 9px;
+      margin-right: 9px;
+    }
+  
+    &__heart:hover {
+      fill: #ff001b;
+    }
+  
+    &__heart-goit {
+      width: 14px;
+      height: 14px;
+      width: 14px;
+      fill: #ff6b08;
+      animation: heartpulse 1.5s infinite ease-in-out;
+    }
+}
+
+@keyframes heartpulse {
+  0% {
+    transform: scale(1);
+    fill: #ff6b08;
+  }
+
+  10% {
+    transform: scale(1.4);
+    fill: #ff001b;
+    filter: drop-shadow(0px 0px 10px #ff6b08);
+  }
+
+  50% {
+    transform: scale(1);
+    fill: #ff6b08;
+  }
+
+  100% {
+    transform: scale(1.2);
+    fill: #ff001b;
+  }
 }
 
 .footer-students-btn {
