@@ -1,11 +1,12 @@
 import noimage from '../image/No-Image-Placeholder.jpg';
+import nomovies from '../image/library-dek.jpg';
 import { scrollToTop } from '../utils/scrollToTop';
 const KEY_WATCHED = 'movies in watched';
 const KEY_QUEUE = 'movies in queue';
 const LIMIT = 20;
-
 export let dataArray = [];
 export const paginationLibraryRef = document.querySelector('.pagination');
+const moviesListElRef = document.querySelector('.movies__list');
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.includes('library.html')) {
@@ -13,12 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-const load = key => {
+const loadData = key => {
   try {
-    const arrayFromLocalStorage = localStorage.getItem(key);
-    return arrayFromLocalStorage === null
+    const dataFromLocalStorage = localStorage.getItem(key);
+    console.log('key', key);
+    return dataFromLocalStorage === null
       ? []
-      : (dataArray = JSON.parse(arrayFromLocalStorage));
+      : (dataArray = JSON.parse(dataFromLocalStorage));
   } catch (error) {
     console.log(error.message);
   }
@@ -28,22 +30,27 @@ function initButton() {
   let watchedBtn = document.querySelector('button[data-id="watched-btn"]');
   let queueBtn = document.querySelector('button[data-id="queue-btn"]');
 
-  if (watchedBtn && queueBtn) {
-    watchedBtn.addEventListener('click', () => {
-      localStoragePagination.resetPage();
-      load(KEY_WATCHED);
-      renderPagination();
-    });
-
-    queueBtn.addEventListener('click', () => {
-      localStoragePagination.resetPage();
-      localStoragePagination.resetPage();
-      load(KEY_QUEUE);
-      renderPagination();
-    });
-    load(KEY_WATCHED);
+  watchedBtn.addEventListener('click', () => {
+    watchedBtn.classList.add('header-movie-btn--active');
+    queueBtn.classList.remove('header-movie-btn--active');
+    localStoragePagination.resetPage();
+    loadData(KEY_WATCHED);
+    console.log('dataArray', dataArray);
     renderPagination();
-  }
+    сutData();
+  });
+
+  queueBtn.addEventListener('click', () => {
+    queueBtn.classList.add('header-movie-btn--active');
+    watchedBtn.classList.remove('header-movie-btn--active');
+    localStoragePagination.resetPage();
+    loadData(KEY_QUEUE);
+    renderPagination();
+    сutData();
+  });
+  loadData(KEY_WATCHED);
+  renderPagination();
+  сutData();
 }
 
 class LocalStoragePagination {
@@ -71,14 +78,25 @@ class LocalStoragePagination {
 }
 export const localStoragePagination = new LocalStoragePagination();
 
-function сutItems() {
+function сutData() {
   let beginGet = LIMIT * (localStoragePagination.currentPage - 1);
   let endGet = LIMIT + beginGet;
-
+  // вставила
+  console.log('hello');
+  console.log('data', dataArray);
+  if (!dataArray || dataArray.length === 0) {
+    moviesListElRef.innerHTML = `<li><p>You don't have any saved movies</p>
+  </li>
+  <li class="movies_not">
+      <img class="" src="${nomovies}" alt="sorry no movies" />
+  </li>`;
+    paginationLibraryRef.innerHTML = '';
+    return;
+  }
   let itemsForRender = dataArray.slice(beginGet, endGet);
   renderMoviesNextPage(itemsForRender);
 }
-renderPagination();
+// renderPagination();
 
 export function renderPagination() {
   let markup = '';
@@ -92,8 +110,7 @@ export function renderPagination() {
   }
 
   if (currentPage > 1)
-    markup += `<li class="pagination__arrow-left arrow-left"><svg class="arrow-left" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg""
-        xmlns="http://www.w3.org/2000/svg">
+    markup += `<li class="pagination__arrow-left arrow-left"><svg class="arrow-left" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
        <path class='arrow-left' d="M12.667 8H3.333M8 12.667 3.333 8 8 3.333" stroke="#000" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
       </svg></li>`;
 
@@ -125,10 +142,9 @@ export function renderPagination() {
     markup += `<li class="pagination__button pagination__button-end">${lastPages}</li>`;
 
   if (currentPage < lastPages)
-    markup += `<li class="pagination__arrow-right arrow-right scroll-top"><svg class="arrow-right" width="16" height="16" viewBox="0 0 16 16" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path class='arrow-right' d="M3.333 8h9.334M8 12.667 12.667 8 8 3.333" stroke="#000" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg></li>`;
+    markup += `<li class="pagination__arrow-right arrow-right"><svg class='arrow-right' width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.333 8h9.334M8 12.667 12.667 8 8 3.333" stroke="#000" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></li>`;
 
   paginationLibraryRef.innerHTML = markup;
 }
@@ -146,14 +162,14 @@ function onPaginationClick(e) {
   if (Number(e.target.textContent)) {
     localStoragePagination.currentPage = Number(e.target.textContent);
   }
-  сutItems();
+  сutData();
   renderPagination();
   scrollToTop();
 }
 
 function renderMoviesNextPage(itemsForRender) {
   const moviesListElRef = document.querySelector('.movies__list');
-  const moviesHTML = itemsForRender
+  const moviesForRender = itemsForRender
     .map(movie => {
       let poster = movie.posterPath;
       if (
@@ -175,5 +191,5 @@ function renderMoviesNextPage(itemsForRender) {
     })
     .join('');
 
-  moviesListElRef.innerHTML = moviesHTML;
+  moviesListElRef.innerHTML = moviesForRender;
 }
