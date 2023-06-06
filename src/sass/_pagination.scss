@@ -1,77 +1,75 @@
 .wrapper__pagination {
-    margin-bottom: 60px;
-    
-    display: flex;
-    justify-content: center;
-        align-items: center;
+  margin-bottom: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pagination {
-    display: flex;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--primary-text-color);
-   
+  display: flex;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--primary-text-color);
 }
 
 .pagination__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 
-    color: inherit;
-    cursor: pointer;
+  color: inherit;
+  cursor: pointer;
 }
 
 .pagination__arrow-left,
 .pagination__arrow-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--footer-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--footer-bg-color);
+  cursor: pointer;
 }
-
 
 .pagination__button-current {
-    border: none;
-    border-radius: 5px;
-    width: 40px;
-    height: 40px;
-    color: var(--akcent-text-color);
-    background-color: var(--secondary-text-color);
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  color: var(--akcent-text-color);
+  background-color: var(--secondary-text-color);
 }
 
-
 .pagination__points {
-    display: none;
-    padding-left: 16px;
-    padding-right: 16px;
-    @media screen and (min-width: 768px) {
+  display: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
     align-items: center;
     color: inherit;
-    cursor: none;
-    }
+    // cursor: none;
+    // cursor: pointer;
+  }
 }
 
 .pagination__button-end {
-    display: none;
-        @media screen and (min-width: 768px) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: inherit;
-        cursor: pointer;
-        }
-   
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    cursor: pointer;
+  }
 }
