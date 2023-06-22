@@ -3,7 +3,7 @@ import moviesService from './movies-service';
 async function renderMovie(currentMovieId) {
   try {
     const movie = await moviesService.fetchFullInfoMovie(currentMovieId);
-    console.log(movie);
+    // console.log(movie);
     const createMovieMarkup = `<button class="btn-modal-close-about-movie" data-close-modal="btn-modal-close-about-movie" type="button">
             <svg class="icon-close">
                 <use href="./image/img_modal-aboutMovie/symbol-defs.svg#icon-close" class="iconSVG-close"></use>

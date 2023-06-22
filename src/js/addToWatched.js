@@ -1,6 +1,9 @@
 import moviesService from './movies-service';
-import { renderMoviesQueue } from './button-queue';
-import { renderMoviesWatched } from './button-queue';
+import { renderPagination } from './pagination-library';
+import { loadData, сutData } from './renderMovies';
+import { KEY_QUEUE, KEY_WATCHED } from './variable';
+// import { renderMoviesQueue } from './button-queue';
+// import { renderMoviesWatched } from './button-queue';
 
 let moviesAddWatched = [];
 let watchedBtn = document.querySelector('button[data-id="watched-btn"]');
@@ -53,10 +56,18 @@ const checkBtn = () => {
   if (window.location.href.indexOf('library.html') > -1) {
     // пользователь находится на странице library.html
     if (queueBtn.classList.contains('header-movie-btn--active')) {
-      renderMoviesQueue();
+      // renderMoviesQueue();
+      loadData(KEY_QUEUE);
+      сutData();
+      renderPagination();
+      // renderMoviesNextPage();
     } else if (watchedBtn.classList.contains('header-movie-btn--active')) {
-      renderMoviesWatched();
-      console.log('safasf');
+      // renderMoviesWatched();
+      loadData(KEY_WATCHED);
+      сutData();
+      renderPagination();
+      // renderMoviesNextPage();
+      // console.log('safasf');
     }
   }
 };

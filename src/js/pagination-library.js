@@ -1,57 +1,9 @@
-import noimage from '../image/No-Image-Placeholder.jpg';
-import nomovies from '../image/library-dek.jpg';
 import { scrollToTop } from '../utils/scrollToTop';
-const KEY_WATCHED = 'movies in watched';
-const KEY_QUEUE = 'movies in queue';
-const LIMIT = 20;
-export let dataArray = [];
+import { dataArray, сutData } from './renderMovies';
+import { LIMIT } from './variable';
+
+export let dataArray = dataArray;
 export const paginationLibraryRef = document.querySelector('.pagination');
-const moviesListElRef = document.querySelector('.movies__list');
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.pathname.includes('library.html')) {
-    initButton();
-  }
-});
-
-const loadData = key => {
-  try {
-    const dataFromLocalStorage = localStorage.getItem(key);
-    console.log('key', key);
-    return dataFromLocalStorage === null
-      ? []
-      : (dataArray = JSON.parse(dataFromLocalStorage));
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
-function initButton() {
-  let watchedBtn = document.querySelector('button[data-id="watched-btn"]');
-  let queueBtn = document.querySelector('button[data-id="queue-btn"]');
-
-  watchedBtn.addEventListener('click', () => {
-    watchedBtn.classList.add('header-movie-btn--active');
-    queueBtn.classList.remove('header-movie-btn--active');
-    localStoragePagination.resetPage();
-    loadData(KEY_WATCHED);
-    console.log('dataArray', dataArray);
-    renderPagination();
-    сutData();
-  });
-
-  queueBtn.addEventListener('click', () => {
-    queueBtn.classList.add('header-movie-btn--active');
-    watchedBtn.classList.remove('header-movie-btn--active');
-    localStoragePagination.resetPage();
-    loadData(KEY_QUEUE);
-    renderPagination();
-    сutData();
-  });
-  loadData(KEY_WATCHED);
-  renderPagination();
-  сutData();
-}
 
 class LocalStoragePagination {
   constructor() {
@@ -78,31 +30,21 @@ class LocalStoragePagination {
 }
 export const localStoragePagination = new LocalStoragePagination();
 
-function сutData() {
-  let beginGet = LIMIT * (localStoragePagination.currentPage - 1);
-  let endGet = LIMIT + beginGet;
-  // вставила
-  console.log('hello');
-  console.log('data', dataArray);
-  if (!dataArray || dataArray.length === 0) {
-    moviesListElRef.innerHTML = `<li><p>You don't have any saved movies</p>
-  </li>
-  <li class="movies_not">
-      <img class="" src="${nomovies}" alt="sorry no movies" />
-  </li>`;
-    paginationLibraryRef.innerHTML = '';
-    return;
-  }
-  let itemsForRender = dataArray.slice(beginGet, endGet);
-  renderMoviesNextPage(itemsForRender);
-}
-// renderPagination();
-
 export function renderPagination() {
   let markup = '';
+
   localStoragePagination.lastPages = Math.ceil(dataArray.length / LIMIT);
+
+  if (dataArray.length <= LIMIT) {
+    localStoragePagination.resetPage();
+  }
+
   const lastPages = localStoragePagination.getlastPages();
   const currentPage = localStoragePagination.getcurrentPage();
+
+  if (currentPage > lastPages) {
+    localStoragePagination.currentPage = localStoragePagination.lastPages;
+  }
 
   if (dataArray.length === 0 || lastPages === 1) {
     paginationLibraryRef.innerHTML = '';
@@ -165,31 +107,4 @@ function onPaginationClick(e) {
   сutData();
   renderPagination();
   scrollToTop();
-}
-
-function renderMoviesNextPage(itemsForRender) {
-  const moviesListElRef = document.querySelector('.movies__list');
-  const moviesForRender = itemsForRender
-    .map(movie => {
-      let poster = movie.posterPath;
-      if (
-        movie.posterPath === 'https://image.tmdb.org/t/p/w500null' ||
-        movie.posterPath ===
-          'https://image.tmdb.org/t/p/w500/mNSqObjKszcxr55buQafQF9ARiC.jpg'
-      ) {
-        poster = noimage;
-      }
-      return `
-		<li class="movies__item" data-movies="${movie.id}">
-			<div class="movies__thumb">
-			<img class="movies__img" src="${poster}" alt="${movie.title}"/>
-			</div>
-			<p class="movies__title">${movie.title}</p>
-			<p class="movies__info">${movie.genres} | ${movie.releaseDate}</p>
-		</li>
-	`;
-    })
-    .join('');
-
-  moviesListElRef.innerHTML = moviesForRender;
 }
