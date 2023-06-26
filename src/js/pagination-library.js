@@ -2,7 +2,7 @@ import { scrollToTop } from '../utils/scrollToTop';
 import { dataArray, сutData } from './renderMovies';
 import { LIMIT } from './variable';
 
-export let dataArray = dataArray;
+export let dataArray;
 export const paginationLibraryRef = document.querySelector('.pagination');
 
 class LocalStoragePagination {
