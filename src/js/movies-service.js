@@ -57,7 +57,7 @@ class MoviesServise {
 
       const response = await axios.get(url);
       const data = await response.data;
-      console.log(response.data);
+      // console.log(response.data);
       const {
         poster_path,
         backdrop_path,
@@ -90,7 +90,7 @@ class MoviesServise {
         original_title,
         releaseDate: release_date.slice(0, 4),
       };
-      console.log(movie);
+      // console.log(movie);
 
       hiddenSpinner();
 
